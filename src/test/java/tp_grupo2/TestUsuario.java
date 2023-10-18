@@ -54,5 +54,6 @@ public class TestUsuario {
 	public void testGetTelefono() {
 		assertEquals("Error en el getTelefono()", this.usuario.getTelefono(), "223 594-3482");
 	}
-
+	
+	
 }
