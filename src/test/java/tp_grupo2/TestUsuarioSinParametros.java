@@ -33,25 +33,25 @@ public class TestUsuarioSinParametros {
 	@Test
 	public void testPassword() {
 		this.usuario.setPassword("078hd90");
-		assertEquals("Error en el seteo de Password",this.usuario.getPassword(),"078hd90");
+		assertEquals("Error en setPassword()",this.usuario.getPassword(),"078hd90");
 	}
 	
 	@Test
 	public void testUsserName() {
 		this.usuario.setUsserName("juanceto01");
-		assertEquals("Error en el seteo de UsserName",this.usuario.getUsserName(),"juanceto01");
+		assertEquals("Error en setUsserName()",this.usuario.getUsserName(),"juanceto01");
 	}
 	
 	@Test
 	public void testRealName() {
 		this.usuario.setRealName("Juan Aceto");
-		assertEquals("Error en el seteo de RealName",this.usuario.getRealName(),"Juan Aceto");
+		assertEquals("Error en setRealName()",this.usuario.getRealName(),"Juan Aceto");
 	}
 	
 	@Test
 	public void testTelefono() {
 		this.usuario.setTelefono("2234555645");
-		assertEquals("Error en el seteo de Telefono",this.usuario.getTelefono(),"2234555645");
+		assertEquals("Error en setTelefono()",this.usuario.getTelefono(),"2234555645");
 	}
 	
 	
