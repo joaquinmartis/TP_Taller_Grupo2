@@ -45,7 +45,7 @@ public class TestTicketSinParametros {
 	
 	@Test
 	public void testSetJornada() {
-		this.ticket.setExperiencia(util.Constantes.JORNADA_COMPLETA);
+		this.ticket.setJornada(util.Constantes.JORNADA_COMPLETA);
 		Assert.assertEquals("Error en setJornada()", this.ticket.getJornada(), util.Constantes.JORNADA_COMPLETA);
 	}
 	
