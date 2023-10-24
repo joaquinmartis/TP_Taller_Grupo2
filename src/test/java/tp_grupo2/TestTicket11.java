@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 import modeloDatos.Ticket;
+import modeloNegocio.Agencia;
 
 public class TestTicket11 {
 	Ticket ticket;
@@ -25,8 +26,9 @@ public class TestTicket11 {
 
 	@Before
 	public void setUp() throws Exception {
-		this.ticket = new Ticket(util.Constantes.HOME_OFFICE, 10000, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS);
-		this.otro = new Ticket(util.Constantes.HOME_OFFICE, 10000, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS);
+		//Agencia.getInstance().setLimitesRemuneracion(100, 200);
+		this.ticket = new Ticket(util.Constantes.HOME_OFFICE, 99, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS);
+		this.otro = new Ticket(util.Constantes.HOME_OFFICE, 99, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS);
 	}
 
 	@After
@@ -40,7 +42,7 @@ public class TestTicket11 {
 	
 	@Test
 	public void testGetComparacionRemuneracion() {
-		//Assert.assertEquals("Error en getComparacionRemuneracion() 11", 1.0, this.ticket.getComparacionRemuneracion(this.otro), 0.0001);
+		Assert.assertEquals("Error en getComparacionRemuneracion() 11", 1.0, this.ticket.getComparacionRemuneracion(this.otro), 0.0001);
 	}
 	
 	@Test

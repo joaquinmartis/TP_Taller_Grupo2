@@ -5,7 +5,10 @@ Cliente no hace falta/se testea Empleador y EmpleadoPretenso
 --En proceso---- Empleador
 EmpleadoPretenso constructor sin parametros
 EmpleadoPretenso constructor con parametros
+
 Ticket
+testGetComparacionRemuneracion MAL HECHO PORQUE LO DE ABAJO NO ANDA
+Agencia.getInstance().setLimitesRemuneracion(int, int) [CREO QUE FALLA, TESTEAR AGENCIA]
 
 
 
