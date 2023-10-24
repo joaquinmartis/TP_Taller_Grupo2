@@ -1,7 +1,7 @@
 package tp_grupo2;
 
-import static org.junit.Assert.*;
-import junit.framework.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,7 +11,6 @@ import org.junit.Test;
 
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Ticket;
-import modeloDatos.Usuario;
 
 public class TestEmpleadoPretenso {
 	private EmpleadoPretenso empleadoPretenso;
@@ -28,21 +27,16 @@ public class TestEmpleadoPretenso {
 	@Before
 	public void setUp() throws Exception {
 		this.empleadoPretenso = new EmpleadoPretenso("PedroRodriguez1", "boca2023", "Pedro Rodriguez", "223 594-3482","Rodriguez",36);
-		this.ticket = new Ticket()
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testEmpleadoPretenso() {
-	}
 	
 	@Test
 	//-------------HACER--------------
 	public void testCalculaComision() {
-		assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(), "hola123");
+		assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)),);
 	}
 	
 	@Test
@@ -51,16 +45,48 @@ public class TestEmpleadoPretenso {
 	}
 	
 	@Test
-	public void testSetApellido() {
+	public void testGetEdad() {
 		assertEquals("Error en el setApellido()", this.empleadoPretenso.getEdad(),36);
 	}
 	
 	@Test
-	public void testSetEdad() {
-		assertEquals("Error en el setEdad()", this.usuario.getTelefono(), "223 594-3482");
+	public void testGetCantidato() {
+		
 	}
 	
+	@Test
+	public void testSetCantidato() {
+		
+	}
 	
+	@Test
+	public void testGetListaDePostulantes() {
+		
+	}
+	
+	@Test
+	public void testGetPuntaje() {
+		
+	}
 
+	@Test
+	public void testGetTicket() {
+		
+	}
+	
+	@Test
+	public void testSetListaDePostulantes() {
+		
+	}
+
+	@Test
+	public void testSetPuntaje() {
+		
+	}
+	
+	@Test
+	public void testSetTicket() {
+		
+	}
 
 }
