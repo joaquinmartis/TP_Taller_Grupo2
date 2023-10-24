@@ -1,8 +1,9 @@
-Usuario sin coonstructor
-Usuario con constructor
+Usuario sin coonstructor ✓
+Usuario con constructor ✓
 Admin no hace falta/esta testeado en usuario
 Cliente no hace falta/se testea Empleador y EmpleadoPretenso
 --En proceso---- Empleador
+<<<<<<< Updated upstream
 EmpleadoPretenso constructor sin parametros
 EmpleadoPretenso constructor con parametros
 
@@ -11,5 +12,9 @@ testGetComparacionRemuneracion MAL HECHO PORQUE LO DE ABAJO NO ANDA
 Agencia.getInstance().setLimitesRemuneracion(int, int) [CREO QUE FALLA, TESTEAR AGENCIA]
 
 
+=======
+EmpleadoPretenso constructor sin parametros ✓
+EmpleadoPretenso constructor con parametros - EN PROGRESO
+>>>>>>> Stashed changes
 
 ! TOSTRING 's ????

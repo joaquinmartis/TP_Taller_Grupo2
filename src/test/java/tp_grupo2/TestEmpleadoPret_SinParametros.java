@@ -14,7 +14,7 @@ import modeloDatos.Ticket;
 import modeloDatos.Usuario;
 
 public class TestEmpleadoPret_SinParametros {
-	EmpleadoPretenso empleadopretenso;
+	EmpleadoPretenso empleadoPretenso;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,12 +26,23 @@ public class TestEmpleadoPret_SinParametros {
 
 	@Before
 	public void setUp() throws Exception {
-		this.empleadopretenso = new EmpleadoPretenso();
+		this.empleadoPretenso = new EmpleadoPretenso();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 	
+	@Test
+	public void testApellido() {
+		this.empleadoPretenso.setApellido("Rodriguez");
+		assertEquals("Error en el seteo de apellido",this.empleadoPretenso.getApellido(),"Rodriguez");
+	}
 	
+	@Test
+	public void testEdad() {
+		this.empleadoPretenso.setEdad(36);
+		assertEquals("Error en el seteo de la edad",this.empleadoPretenso.getEdad(),36);
+	}
+
 }
