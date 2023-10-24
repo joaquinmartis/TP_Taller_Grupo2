@@ -3,3 +3,9 @@ Usuario con constructor
 Admin no hace falta/esta testeado en usuario
 Cliente no hace falta/se testea Empleador y EmpleadoPretenso
 --En proceso---- Empleador
+EmpleadoPretenso constructor sin parametros
+EmpleadoPretenso constructor con parametros
+
+
+
+! TOSTRING 's ????
