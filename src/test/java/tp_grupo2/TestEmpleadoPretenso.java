@@ -36,7 +36,7 @@ public class TestEmpleadoPretenso {
 	@Test
 	//-------------HACER--------------
 	public void testCalculaComision() {
-		assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)),);
+		assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)));
 	}
 	
 	@Test
