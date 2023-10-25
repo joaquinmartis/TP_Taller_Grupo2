@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import excepciones.ImposibleCrearEmpleadoException;
 import excepciones.ImposibleCrearEmpleadorException;
 import excepciones.NewRegisterException;
 import modeloDatos.EmpleadoPretenso;
@@ -78,6 +79,22 @@ Throws:
 		}
 	}
 
+	public void testregistroEmpleador2bis() {
+		String nombreUsuario=null;
+		String pass=null;
+		String nombreReal=null;
+ 		String telefono=null;
+		String tipoPersona=null;
+		String rubro=null;
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
 	public void testregistroEmpleador3() {
 		String nombreUsuario= "";
 		String pass="contrasenia";
@@ -94,4 +111,416 @@ Throws:
 		}
 	}
 
+	public void testregistroEmpleador3bis() {
+		String nombreUsuario= null;
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+	public void testregistroEmpleador4() {
+		String nombreUsuario= "Pepegamer";
+		String pass="";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+public void testregistroEmpleador4bis() {
+		String nombreUsuario= "Pepegamer";
+		String pass=null;
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador5() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador5bis() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal=null;
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador6() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="";
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador6bis() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono=null;
+		String tipoPersona="FISICA";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador7() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="";
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador7bis() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona=null;
+		String rubro="Informatica";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador8() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro="";
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleador8bis() {
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe Gomes";
+ 		String telefono="2234434312";
+		String tipoPersona="FISICA";
+		String rubro=null;
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadorException e){
+		}
+	}
+
+	public void testregistroEmpleado1(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		}
+	}
+
+	public void testregistroEmpleado2(){
+		String nombreUsuario= "";
+		String pass="";
+		String nombreReal="";
+		String apellido="";
+		String telefono="";
+		int edad=-1;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado2bis(){
+		String nombreUsuario= null;
+		String pass=null;
+		String nombreReal=null;
+		String apellido=null;
+		String telefono=null;
+		int edad=-1;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		}
+	}
+	
+	public void testregistroEmpleado3(){
+		String nombreUsuario= "";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No lanza excepcion");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado3bis(){
+		String nombreUsuario= null;
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No lanza excepcion");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado4(){
+		String nombreUsuario= "Pepegamer";
+		String pass="";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado4bis(){
+		String nombreUsuario= "Pepegamer";
+		String pass=null;
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+	
+	public void testregistroEmpleado5(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado5bis(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal=null;
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado6(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado6bis(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido=null;
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado7(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado7bis(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono=null;
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+
+	public void testregistroEmpleado8(){
+		String nombreUsuario= "Pepegamer";
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=-1;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			fail("Ya existe un empleador con ese nombre de usuario");
+		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
 }
