@@ -10,10 +10,10 @@ import org.junit.Test;
 
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
-import modeloNegocio.Agencia;
 
-public class TestAgencia {
-	Agencia agencia;
+public class TestEmpelador {
+	Empleador empleador;
+	EmpleadoPretenso empleadopretenso;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -25,7 +25,7 @@ public class TestAgencia {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		
 	}
 
 	@After
@@ -33,7 +33,7 @@ public class TestAgencia {
 	}
 
 	@Test
-	public void test() {
+	public void testeliminarTicket() {
 		fail("Not yet implemented");
 	}
 
