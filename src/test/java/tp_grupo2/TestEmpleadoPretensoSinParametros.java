@@ -13,7 +13,7 @@ import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Ticket;
 import modeloDatos.Usuario;
 
-public class TestEmpleadoPret_SinParametros {
+public class TestEmpleadoPretensoSinParametros {
 	EmpleadoPretenso empleadoPretenso;
 	
 	@BeforeClass

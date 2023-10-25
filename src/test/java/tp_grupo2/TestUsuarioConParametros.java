@@ -30,10 +30,6 @@ public class TestUsuarioConParametros {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testUsuario() {
-	}
 	
 	@Test
 	public void testGetPassword() {

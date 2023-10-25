@@ -12,7 +12,7 @@ import org.junit.Test;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Ticket;
 
-public class TestEmpleadoPretenso {
+public class TestEmpleadoPretensoConParametros {
 	private EmpleadoPretenso empleadoPretenso;
 	private Ticket ticket;
 	
@@ -36,6 +36,7 @@ public class TestEmpleadoPretenso {
 	@Test
 	//-------------HACER--------------
 	public void testCalculaComision() {
+		fail("Not yet implemented");
 		assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)));
 	}
 	
