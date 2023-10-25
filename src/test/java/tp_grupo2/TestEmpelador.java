@@ -33,7 +33,7 @@ public class TestEmpelador {
 	}
 
 	@Test
-	public void test() {
+	public void testeliminarTicket() {
 		fail("Not yet implemented");
 	}
 
