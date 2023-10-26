@@ -24,12 +24,6 @@ public class TestEmpleadorSinParametros {
 
 	@Before
 	public void setUp() throws Exception {
-		// usserName
-		// password
-		// realName
-		// telefono
-		// rubro
-		// tipoPersona
 		this.empleador = new Empleador();
 	}
 

@@ -34,15 +34,20 @@ public class TestEmpleadoPretensoSinParametros {
 	}
 	
 	@Test
-	public void testApellido() {
+	public void testSetApellido() {
 		this.empleadoPretenso.setApellido("Rodriguez");
-		assertEquals("Error en el seteo de apellido",this.empleadoPretenso.getApellido(),"Rodriguez");
+		assertEquals("Error en el seteo de apellido", "Rodriguez", this.empleadoPretenso.getApellido());
 	}
 	
 	@Test
-	public void testEdad() {
+	public void testSetEdad() {
 		this.empleadoPretenso.setEdad(36);
-		assertEquals("Error en el seteo de la edad",this.empleadoPretenso.getEdad(),36);
+		assertEquals("Error en el seteo de la edad", 36, this.empleadoPretenso.getEdad());
+	}
+	
+	@Test
+	public void testCalculaComision() {
+		fail("Not yet implemented");
 	}
 
 }
