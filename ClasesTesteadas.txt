@@ -16,4 +16,4 @@ Empleador constructor con parametros ✓ (falta calculaComision)
 Contratacion sin parametros ✓
 Contratacion con parametros ✓
 
-! TOSTRING 's ????
+! TOSTRING 's ???? No se testean(lo consulte)
