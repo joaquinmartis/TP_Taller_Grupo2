@@ -5,6 +5,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -36,37 +37,37 @@ public class TestEmpleadoPretensoConParametros {
 	@Test
 	public void testCalculaComision() {
 		fail("Not yet implemented");
-		// assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)));
+		Assert.assertEquals("Error en el CalculaComision()", this.empleadoPretenso.calculaComision(new Ticket(util.Constantes.HOME_OFFICE,80000,util.Constantes.JORNADA_COMPLETA,util.Constantes.JUNIOR,util.Constantes.EXP_MEDIA,util.Constantes.TERCIARIOS)));
 	}
 
 	@Test
 	public void testGetUsserName() {
-		assertEquals("Error en el getUsserName()", "PedroRodriguez1", this.empleadoPretenso.getUsserName());
+		Assert.assertEquals("Error en el getUsserName()", "PedroRodriguez1", this.empleadoPretenso.getUsserName());
 	}
 	
 	@Test
 	public void testGetPassword() {
-		assertEquals("Error en el getPassword()", "boca2023", this.empleadoPretenso.getPassword());
+		Assert.assertEquals("Error en el getPassword()", "boca2023", this.empleadoPretenso.getPassword());
 	}
 
 	@Test
 	public void testGetRealName() {
-		assertEquals("Error en el getRealName()", "Pedro Rodriguez", this.empleadoPretenso.getRealName());
+		Assert.assertEquals("Error en el getRealName()", "Pedro Rodriguez", this.empleadoPretenso.getRealName());
 	}
 
 	@Test
 	public void testGetTelefono() {
-		assertEquals("Error en el getTelefono()", "+54 9 223 594-3482", this.empleadoPretenso.getTelefono());
+		Assert.assertEquals("Error en el getTelefono()", "+54 9 223 594-3482", this.empleadoPretenso.getTelefono());
 	}
 	
 	@Test
 	public void testGetApellido() {
-		assertEquals("Error en el getApellido()", "Rodriguez", this.empleadoPretenso.getApellido());
+		Assert.assertEquals("Error en el getApellido()", "Rodriguez", this.empleadoPretenso.getApellido());
 	}
 	
 	@Test
 	public void testGetEdad() {
-		assertEquals("Error en el getApellido()", 36, this.empleadoPretenso.getEdad());
+		Assert.assertEquals("Error en el getApellido()", 36, this.empleadoPretenso.getEdad());
 	}
 
 }

@@ -1,7 +1,5 @@
 package tp_grupo2;
 
-import static org.junit.Assert.fail;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -10,9 +8,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import modeloDatos.Empleador;
+import modeloDatos.Ticket;
+
 
 public class TestEmpleadorConParametros {
 	Empleador empleador;
+	Ticket ticket;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -25,6 +26,7 @@ public class TestEmpleadorConParametros {
 	@Before
 	public void setUp() throws Exception {
 		this.empleador = new Empleador("juancito", "qwerty123", "Juan Cito", "+54 9 223 666-1234", util.Constantes.ADMINISTRADOR, util.Constantes.JURIDICA);
+		this.ticket = new Ticket(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS);
 	}
 
 	@After
@@ -33,7 +35,7 @@ public class TestEmpleadorConParametros {
 
 	@Test
 	public void testCalculaComision() {
-		fail("Not yet implemented");
+		this.empleador.calculaComision(ticket);
 	}
 	
 	@Test

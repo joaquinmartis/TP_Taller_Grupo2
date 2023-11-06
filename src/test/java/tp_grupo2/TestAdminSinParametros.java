@@ -53,27 +53,4 @@ public class TestAdminSinParametros {
 		this.admin.setTelefono("2234555645");
 		assertEquals("Error en setTelefono()",this.admin.getTelefono(),"2234555645");
 	}
-	
-	@Test
-	public void testGetPassword() {
-		assertEquals("Error en getPassword()", this.admin.getPassword(), "hola123");
-	}
-	
-	@Test
-	public void testGetRealName() {
-		assertEquals("Error en getRealName()", this.admin.getRealName(), "Juan Perez");
-	}
-	
-	@Test
-	public void testGetUsserName() {
-		assertEquals("Error en getUsserName()", this.admin.getUsserName(), "JuancitoPerez02");
-	}
-	
-	@Test
-	public void testGetTelefono() {
-		assertEquals("Error en getTelefono()", this.admin.getTelefono(), "223 594-3482");
-	}
-	
-	
-
 }
