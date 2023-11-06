@@ -11,8 +11,8 @@ import org.junit.Test;
 
 import modeloDatos.Usuario;
 
-public class TestUsuarioConParametros {
-	Usuario usuario;
+public class TestAdminConParametros {
+	Admin admin;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,7 +24,7 @@ public class TestUsuarioConParametros {
 
 	@Before
 	public void setUp() throws Exception {
-		this.usuario = new Usuario("JuancitoPerez02", "hola123", "Juan Perez", "223 594-3482");
+		this.admin = new Admin("JuancitoPerez02", "hola123", "Juan Perez", "223 594-3482");
 	}
 
 	@After
@@ -33,22 +33,22 @@ public class TestUsuarioConParametros {
 	
 	@Test
 	public void testGetPassword() {
-		assertEquals("Error en getPassword()", this.usuario.getPassword(), "hola123");
+		assertEquals("Error en getPassword()", this.admin.getPassword(), "hola123");
 	}
 	
 	@Test
 	public void testGetRealName() {
-		assertEquals("Error en getRealName()", this.usuario.getRealName(), "Juan Perez");
+		assertEquals("Error en getRealName()", this.admin.getRealName(), "Juan Perez");
 	}
 	
 	@Test
 	public void testGetUsserName() {
-		assertEquals("Error en getUsserName()", this.usuario.getUsserName(), "JuancitoPerez02");
+		assertEquals("Error en getUsserName()", this.admin.getUsserName(), "JuancitoPerez02");
 	}
 	
 	@Test
 	public void testGetTelefono() {
-		assertEquals("Error en getTelefono()", this.usuario.getTelefono(), "223 594-3482");
+		assertEquals("Error en getTelefono()", this.admin.getTelefono(), "223 594-3482");
 	}
 	
 	

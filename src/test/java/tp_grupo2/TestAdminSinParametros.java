@@ -8,10 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import modeloDatos.Admin;
 import modeloDatos.Usuario;
 
-public class TestUsuarioSinParametros {
-	Usuario usuario;
+public class TestAdminSinParametros {
+	Admin admin;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -23,7 +24,7 @@ public class TestUsuarioSinParametros {
 
 	@Before
 	public void setUp() throws Exception {
-		this.usuario=new Usuario();
+		this.admin=new Admin();
 	}
 
 	@After
@@ -32,26 +33,26 @@ public class TestUsuarioSinParametros {
 
 	@Test
 	public void testPassword() {
-		this.usuario.setPassword("078hd90");
-		assertEquals("Error en setPassword()",this.usuario.getPassword(),"078hd90");
+		this.admin.setPassword("078hd90");
+		assertEquals("Error en setPassword()",this.admin.getPassword(),"078hd90");
 	}
 	
 	@Test
 	public void testUsserName() {
-		this.usuario.setUsserName("juanceto01");
-		assertEquals("Error en setUsserName()",this.usuario.getUsserName(),"juanceto01");
+		this.admin.setUsserName("juanceto01");
+		assertEquals("Error en setUsserName()",this.admin.getUsserName(),"juanceto01");
 	}
 	
 	@Test
 	public void testRealName() {
-		this.usuario.setRealName("Juan Aceto");
-		assertEquals("Error en setRealName()",this.usuario.getRealName(),"Juan Aceto");
+		this.admin.setRealName("Juan Aceto");
+		assertEquals("Error en setRealName()",this.admin.getRealName(),"Juan Aceto");
 	}
 	
 	@Test
 	public void testTelefono() {
-		this.usuario.setTelefono("2234555645");
-		assertEquals("Error en setTelefono()",this.usuario.getTelefono(),"2234555645");
+		this.admin.setTelefono("2234555645");
+		assertEquals("Error en setTelefono()",this.admin.getTelefono(),"2234555645");
 	}
 	
 	
