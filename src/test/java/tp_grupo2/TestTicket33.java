@@ -26,9 +26,9 @@ public class TestTicket33 {
 
 	@Before
 	public void setUp() throws Exception {
-		//Agencia.getInstance().setLimitesRemuneracion(100, 200);
-		this.ticket = new Ticket(util.Constantes.INDISTINTO, 201, util.Constantes.JORNADA_EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS);
-		this.otro = new Ticket(util.Constantes.INDISTINTO, 201, util.Constantes.JORNADA_EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS);
+		Agencia.getInstance().setLimitesRemuneracion(1000, 2000);
+		this.ticket = new Ticket(util.Constantes.INDISTINTO, 2001, util.Constantes.JORNADA_EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS);
+		this.otro = new Ticket(util.Constantes.INDISTINTO, 2001, util.Constantes.JORNADA_EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS);
 	}
 
 	@After
