@@ -23,7 +23,7 @@ public class TestTicketConParametros {
 	}
 
 	@Before
-	public void setUp() {
+	public void setUp() throws Exception {
 		this.ticket = new Ticket(util.Constantes.PRESENCIAL, 10000, util.Constantes.JORNADA_COMPLETA, util.Constantes.JUNIOR, util.Constantes.EXP_MEDIA, util.Constantes.PRIMARIOS);
 	}
 

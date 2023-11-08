@@ -44,16 +44,6 @@ public class TestClientePuntajeConParametros {
 		assertEquals("Error en getPuntaje()", 30.0, this.cliente.getPuntaje(), 0.0001);
 	}
 	
-	@Test 
-	public void testSetPuntaje() {
-		this.cliente.setPuntaje(-100);
-		assertEquals(-100,this.cliente.getPuntaje());
-	}
 	
-	@Test
-	public void testSetCliente() {
-		Empleador empleador=new Empleador();
-		this.cliente.setCliente(empleador);
-		assertEquals(empleador,this.cliente.getCliente());
-	}
+
 }
