@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import modeloDatos.Empleador;
+import modeloDatos.Ticket;
 
 public class TestEmpleadorSinParametros {
 	Empleador empleador;
@@ -31,11 +32,6 @@ public class TestEmpleadorSinParametros {
 	public void tearDown() throws Exception {
 	}
 	
-	@Test
-	public void testCalculaComision() {
-		fail("Not yet implemented");
-	}
-
 	@Test
 	public void testSetUsserName() {
 		this.empleador.setUsserName("juancito");
@@ -62,8 +58,8 @@ public class TestEmpleadorSinParametros {
 
 	@Test
 	public void testSetRubro() {
-		this.empleador.setRubro(util.Constantes.ADMINISTRADOR);
-		Assert.assertEquals("Error en empleador.setRubro()", util.Constantes.ADMINISTRADOR, this.empleador.getRubro());
+		this.empleador.setRubro(util.Constantes.SALUD);
+		Assert.assertEquals("Error en empleador.setRubro()", util.Constantes.SALUD, this.empleador.getRubro());
 	}
 
 	@Test
