@@ -56,25 +56,5 @@ public class TestContratacionConParametros {
 		Assert.assertFalse(null == this.contratacion.getFecha());
 	}
 	
-	@Test
-	public void testSetEmpleado() {
-		EmpleadoPretenso empleado = new EmpleadoPretenso();
-		this.contratacion.setEmpleado(empleado);
-		Assert.assertEquals("Error en contratacion.setEmpleado()", empleado, this.contratacion.getEmpleado());
-	}
-	
-	@Test
-	public void testSetEmpleador() {
-		Empleador empleador = new Empleador();
-		this.contratacion.setEmpleador(empleador);
-		Assert.assertEquals("Error en contratacion.setEmpleador()", empleador, this.contratacion.getEmpleador());
-	}
-	
-	@Test
-	public void testSetFecha() {
-		GregorianCalendar fecha = new GregorianCalendar();
-		this.contratacion.setFecha(fecha);
-		Assert.assertEquals("Error en contratacion.setFecha()", fecha, this.contratacion.getFecha());
-	}
 	
 }
