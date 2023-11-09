@@ -1,6 +1,7 @@
 package tp_grupo2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -10,6 +11,7 @@ import org.junit.Test;
 
 import modeloDatos.ClientePuntaje;
 import modeloDatos.EmpleadoPretenso;
+import modeloDatos.Empleador;
 
 public class TestClientePuntajeConParametros {
 	ClientePuntaje cliente;
@@ -45,5 +47,73 @@ public class TestClientePuntajeConParametros {
 	}
 	
 	
-
+	@Test 
+	public void testSetPuntaje() {
+		this.cliente.setPuntaje(-100);
+		assertEquals("Error en setPuntaje()",-100,this.cliente.getPuntaje(),0.0001);
+	}
+	
+	@Test
+	public void testSetCliente() {
+		Empleador empleador=new Empleador();
+		this.cliente.setCliente(empleador);
+		assertEquals("Error en SetCliente()", empleador,this.cliente.getCliente());
+	}
+	
+	@Test
+	public void testCompareTo1() {
+		try {
+				assertEquals ("Error CompareTo(), no coincide el resultado de comparacion",-1,this.cliente.compareTo(new ClientePuntaje(40.0, new Empleador())));
+		}
+		catch(NullPointerException | ClassCastException e) {
+			fail("Se lanza una excepcion no esperada");
+		}
+	}
+	
+	@Test
+	public void testCompareTo2() {
+		try {
+			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion",0,this.cliente.compareTo(new ClientePuntaje(30.0, new Empleador())));
+		}
+		catch(NullPointerException | ClassCastException e) {
+			fail("Se lanza una excepcion no esperada");
+		}
+	}
+	
+	@Test
+	public void testCompareTo3() {
+		try {
+			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion",0,this.cliente.compareTo(new ClientePuntaje(20.0, new Empleador())));
+		}
+		catch(NullPointerException | ClassCastException e) {
+			fail("Se lanza una excepcion no esperada");
+		}
+	}
+	
+	@Test
+	public void testCompareTo4() {
+		try {
+			int rta= this.cliente.compareTo(null);
+			fail("No se lanza la excepcion esperada (NullPointerException)");
+		}
+		catch(ClassCastException o) {
+			fail("Se lanza una excepcion no esperada");
+		}
+		catch (NullPointerException e) {
+		}
+	}
+	
+	@Test
+	public void testCompareTo5() {
+		try {
+			int rta= this.cliente.compareTo(new Empleador());
+			fail("No se lanza la excepcion esperada (ClassCastException)");
+		}
+		catch(ClassCastException o) {
+			
+		}
+		catch (NullPointerException e) {
+			fail("Se lanza una excepcion no esperada");
+		}
+	}
 }
