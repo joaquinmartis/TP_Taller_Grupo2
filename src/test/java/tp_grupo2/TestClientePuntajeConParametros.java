@@ -14,7 +14,7 @@ import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 
 public class TestClientePuntajeConParametros {
-	ClientePuntaje cliente;
+	ClientePuntaje clientePuntaje;
 	EmpleadoPretenso empleado;
 	
 	@BeforeClass
@@ -28,7 +28,7 @@ public class TestClientePuntajeConParametros {
 	@Before
 	public void setUp() throws Exception {
 		this.empleado = new EmpleadoPretenso();
-		this.cliente = new ClientePuntaje(30.0, this.empleado);
+		this.clientePuntaje = new ClientePuntaje(30.0, this.empleado);
 	}
 
 	@After
@@ -38,32 +38,32 @@ public class TestClientePuntajeConParametros {
 	
 	@Test
 	public void testGetCliente() {
-		assertEquals("Error en getCliente()", this.empleado, this.cliente.getCliente());
+		assertEquals("Error en getCliente()", this.empleado, this.clientePuntaje.getCliente());
 	}
 	
 	@Test
 	public void testGetPuntaje() {
-		assertEquals("Error en getPuntaje()", 30.0, this.cliente.getPuntaje(), 0.0001);
+		assertEquals("Error en getPuntaje()", 30.0, this.clientePuntaje.getPuntaje(), 0.0001);
 	}
 	
 	
 	@Test 
 	public void testSetPuntaje() {
-		this.cliente.setPuntaje(-100);
-		assertEquals("Error en setPuntaje()",-100,this.cliente.getPuntaje(),0.0001);
+		this.clientePuntaje.setPuntaje(-100);
+		assertEquals("Error en setPuntaje()",-100,this.clientePuntaje.getPuntaje(),0.0001);
 	}
 	
 	@Test
 	public void testSetCliente() {
 		Empleador empleador=new Empleador();
-		this.cliente.setCliente(empleador);
-		assertEquals("Error en SetCliente()", empleador,this.cliente.getCliente());
+		this.clientePuntaje.setCliente(empleador);
+		assertEquals("Error en SetCliente()", empleador,this.clientePuntaje.getCliente());
 	}
 	
 	@Test
 	public void testCompareTo1() {
 		try {
-				assertEquals ("Error CompareTo(), no coincide el resultado de comparacion", -1, this.cliente.compareTo(new ClientePuntaje(40.0, new Empleador())));
+				assertEquals ("Error CompareTo(), no coincide el resultado de comparacion", -1, this.clientePuntaje.compareTo(new ClientePuntaje(40.0, new Empleador())));
 		}
 		catch(NullPointerException | ClassCastException e) {
 			fail("Se lanza una excepcion no esperada");
@@ -73,7 +73,7 @@ public class TestClientePuntajeConParametros {
 	@Test
 	public void testCompareTo2() {
 		try {
-			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion", 0, this.cliente.compareTo(new ClientePuntaje(30.0, new Empleador())));
+			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion", 0, this.clientePuntaje.compareTo(new ClientePuntaje(30.0, new Empleador())));
 		}
 		catch(NullPointerException | ClassCastException e) {
 			fail("Se lanza una excepcion no esperada");
@@ -83,7 +83,7 @@ public class TestClientePuntajeConParametros {
 	@Test
 	public void testCompareTo3() {
 		try {
-			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion", 1, this.cliente.compareTo(new ClientePuntaje(20.0, new Empleador())));
+			assertEquals ("Error CompareTo(),no coincide el resultado de comparacion", 1, this.clientePuntaje.compareTo(new ClientePuntaje(20.0, new Empleador())));
 		}
 		catch(NullPointerException | ClassCastException e) {
 			fail("Se lanza una excepcion no esperada");
@@ -93,7 +93,7 @@ public class TestClientePuntajeConParametros {
 	@Test
 	public void testCompareTo4() {
 		try {
-			int rta= this.cliente.compareTo(null);
+			int rta= this.clientePuntaje.compareTo(null);
 			fail("No se lanza la excepcion esperada (NullPointerException)");
 		}
 		catch(ClassCastException o) {
@@ -106,7 +106,7 @@ public class TestClientePuntajeConParametros {
 	@Test
 	public void testCompareTo5() {
 		try {
-			int rta= this.cliente.compareTo(new Empleador());
+			int rta= this.clientePuntaje.compareTo(new Empleador());
 			fail("No se lanza la excepcion esperada (ClassCastException)");
 		}
 		catch(ClassCastException o) {
