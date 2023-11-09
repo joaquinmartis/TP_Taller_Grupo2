@@ -1,19 +1,11 @@
-Admin sin coonstructor ✓
-Admin con constructor ✓
-Usuario es abstracta
-Cliente no hace falta/se testea Empleador y EmpleadoPretenso
-
-Ticket
-testGetComparacionRemuneracion MAL HECHO PORQUE LO DE ABAJO NO ANDA
-Agencia.getInstance().setLimitesRemuneracion(int, int) [CREO QUE FALLA, TESTEAR AGENCIA]
-
-
-=======
-EmpleadoPretenso constructor sin parametros ✓ (falta calculaComision)
-EmpleadoPretenso constructor con parametros ✓ (falta calculaComision)
-Empleador constructor sin parametros ✓ (falta calculaComision)
-Empleador constructor con parametros ✓ (falta calculaComision)
+Admin ✓
+Usuario es abstracta ✓
+Cliente es abstracta ✓
+Ticket ✓
+EmpleadoPretenso constructor sin parametros ✓
+EmpleadoPretenso constructor con parametros ✓
+Empleador constructor sin parametros ✓
+Empleador constructor con parametros ✓
 Contratacion sin parametros ✓
 Contratacion con parametros ✓
-
-! TOSTRING 's ???? No se testean(lo consulte)
+ClientePuntaje ✓
