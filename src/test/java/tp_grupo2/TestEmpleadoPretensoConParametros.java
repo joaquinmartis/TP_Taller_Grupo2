@@ -44,7 +44,7 @@ public class TestEmpleadoPretensoConParametros {
 		// Empleado junior --> 80% * sueldoPretenso
 	}
 	
-	//DE CLIENTE ------------- HACER LISTA DE POSTULANTES -----------
+	//DE CLIENTE 
 	@Test
 	public void testGetCandidato() {
 		Empleador empleador = new Empleador("juancito", "qwerty123", "Juan Cito", "+54 9 223 666-1234", util.Constantes.ADMINISTRADOR, util.Constantes.JURIDICA);
@@ -80,6 +80,7 @@ public class TestEmpleadoPretensoConParametros {
 	
 	@Test
 	public void testGetTicket() {
+		this.empleadoPretenso.setTicket(this.ticket);
 		Assert.assertEquals("Error en el getTicket()", this.empleadoPretenso.getTicket(), this.ticket);
 	}	
 	

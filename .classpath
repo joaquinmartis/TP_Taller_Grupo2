@@ -56,5 +56,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/lib/LinkeFi.jar"/>
+	<classpathentry kind="lib" path="src/lib/linkeFI.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

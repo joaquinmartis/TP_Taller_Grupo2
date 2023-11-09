@@ -5,6 +5,7 @@ import junit.framework.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,6 +45,13 @@ public class TestEmpleadoPretensoSinParametros {
 	public void testSetEdad() {
 		this.empleadoPretenso.setEdad(36);
 		assertEquals("Error en el seteo de la edad", 36, this.empleadoPretenso.getEdad());
+	}
+	
+	@Test
+	public void testCalculaComision() {
+		Ticket ticketComision = new Ticket(util.Constantes.HOME_OFFICE, 80000, util.Constantes.JORNADA_COMPLETA, util.Constantes.JUNIOR, util.Constantes.EXP_MEDIA, util.Constantes.TERCIARIOS);
+		Assert.assertEquals("Error en el CalculaComision()", 64000.0, this.empleadoPretenso.calculaComision(ticketComision), 0.00001);
+		// Empleado junior --> 80% * sueldoPretenso
 	}
 	
 
