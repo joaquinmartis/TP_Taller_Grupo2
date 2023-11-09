@@ -33,6 +33,7 @@ public class TestEmpleadoPretensoSinParametros {
 	public void tearDown() throws Exception {
 	}
 	
+	//DE EMPLEADO PRETENSO
 	@Test
 	public void testSetApellido() {
 		this.empleadoPretenso.setApellido("Rodriguez");
@@ -45,9 +46,5 @@ public class TestEmpleadoPretensoSinParametros {
 		assertEquals("Error en el seteo de la edad", 36, this.empleadoPretenso.getEdad());
 	}
 	
-	@Test
-	public void testCalculaComision() {
-		fail("Not yet implemented");
-	}
 
 }

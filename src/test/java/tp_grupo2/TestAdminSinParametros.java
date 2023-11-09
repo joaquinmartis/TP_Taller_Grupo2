@@ -30,6 +30,7 @@ public class TestAdminSinParametros {
 	public void tearDown() throws Exception {
 	}
 
+	// metodos de USUARIO
 	@Test
 	public void testPassword() {
 		this.admin.setPassword("078hd90");
@@ -53,4 +54,6 @@ public class TestAdminSinParametros {
 		this.admin.setTelefono("2234555645");
 		assertEquals("Error en setTelefono()",this.admin.getTelefono(),"2234555645");
 	}
+	
+	
 }

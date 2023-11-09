@@ -1,6 +1,6 @@
 Admin sin coonstructor ✓
 Admin con constructor ✓
-Usuario no hace falta/esta testeado en admin
+Usuario es abstracta
 Cliente no hace falta/se testea Empleador y EmpleadoPretenso
 
 Ticket

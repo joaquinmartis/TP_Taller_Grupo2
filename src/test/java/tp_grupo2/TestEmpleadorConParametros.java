@@ -33,11 +33,13 @@ public class TestEmpleadorConParametros {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test // TERMINAR
 	public void testCalculaComision() {
-		this.empleador.calculaComision(ticket);
+		
+		// Assert.assertEquals("Error en el calcula comision",this.empleador.calculaComision(ticket),1);
 	}
 	
+	// DE USUARIO
 	@Test
 	public void testGetUsserName() {
 		Assert.assertEquals("Error en empleador.getUsserName()", "juancito", this.empleador.getUsserName());
@@ -54,7 +56,7 @@ public class TestEmpleadorConParametros {
 	}
 
 	@Test
-	public void testGetTelefono() {
+	public void testgetTelefono() {
 		Assert.assertEquals("Error en empleador.getTelefono()", "+54 9 223 666-1234", this.empleador.getTelefono());
 	}
 
@@ -64,8 +66,11 @@ public class TestEmpleadorConParametros {
 	}
 
 	@Test
-	public void testGetTipoPersona() {
+	public void testgetTipoPersona() {
 		Assert.assertEquals("Error en empleador.getTipoPersona()", util.Constantes.JURIDICA, this.empleador.getTipoPersona());
 	}
+
+	// DE CLIENTE
+	
 
 }

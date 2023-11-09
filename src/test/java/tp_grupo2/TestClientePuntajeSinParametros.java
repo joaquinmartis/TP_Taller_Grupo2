@@ -11,9 +11,11 @@ import org.junit.Test;
 
 import modeloDatos.ClientePuntaje;
 import modeloDatos.EmpleadoPretenso;
+import modeloDatos.Empleador;
 
 public class TestClientePuntajeSinParametros {
 	ClientePuntaje cliente;
+	Empleador empleador;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -25,6 +27,7 @@ public class TestClientePuntajeSinParametros {
 
 	@Before
 	public void setUp() throws Exception {
+		this.empleador = new Empleador();
 		this.cliente = new ClientePuntaje();
 	}
 
@@ -35,9 +38,9 @@ public class TestClientePuntajeSinParametros {
 	
 	@Test
 	public void testSetCliente() {
-		EmpleadoPretenso empleado = new EmpleadoPretenso();
-		this.cliente.setCliente(empleado);
-		Assert.assertEquals("Error en setCliente()", empleado, this.cliente.getCliente());
+		Empleador empleador = new Empleador();
+		this.cliente.setCliente(empleador);
+		Assert.assertEquals("Error en setCliente()", empleador, this.cliente.getCliente());
 	}
 	
 	@Test
