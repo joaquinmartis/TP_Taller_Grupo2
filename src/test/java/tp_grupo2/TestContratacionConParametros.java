@@ -3,6 +3,8 @@ package tp_grupo2;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import java.util.GregorianCalendar;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,6 +54,27 @@ public class TestContratacionConParametros {
 	@Test
 	public void testGetFecha() {
 		Assert.assertFalse(null == this.contratacion.getFecha());
+	}
+	
+	@Test
+	public void testSetEmpleado() {
+		EmpleadoPretenso empleado = new EmpleadoPretenso();
+		this.contratacion.setEmpleado(empleado);
+		Assert.assertEquals("Error en contratacion.setEmpleado()", empleado, this.contratacion.getEmpleado());
+	}
+	
+	@Test
+	public void testSetEmpleador() {
+		Empleador empleador = new Empleador();
+		this.contratacion.setEmpleador(empleador);
+		Assert.assertEquals("Error en contratacion.setEmpleador()", empleador, this.contratacion.getEmpleador());
+	}
+	
+	@Test
+	public void testSetFecha() {
+		GregorianCalendar fecha = new GregorianCalendar();
+		this.contratacion.setFecha(fecha);
+		Assert.assertEquals("Error en contratacion.setFecha()", fecha, this.contratacion.getFecha());
 	}
 	
 }
