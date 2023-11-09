@@ -37,31 +37,36 @@ public class TestTicket12 {
 	
 	@Test
 	public void testGetComparacionLocacion() {
-		Assert.assertEquals("Error en getComparacionLocacion() 12", this.ticket.getComparacionLocacion(this.otro), -1.0, 0.0001);
+		Assert.assertEquals("Error en getComparacionLocacion() 12",-1.0 , this.ticket.getComparacionLocacion(this.otro), 0.0001);
 	}
 	
 	@Test
 	public void testGetComparacionRemuneracion() {
-		Assert.assertEquals("Error en getComparacionRemuneracion() 12", this.ticket.getComparacionRemuneracion(this.otro), -0.5, 0.0001);
+		Assert.assertEquals("Error en getComparacionRemuneracion() 12",  -0.5, this.ticket.getComparacionRemuneracion(this.otro),0.0001);
 	}
 	
 	@Test
 	public void testGetComparacionJornada() {
-		Assert.assertEquals("Error en getComparacionJornada() 12", this.ticket.getComparacionJornada(this.otro), -0.5, 0.0001);
+		Assert.assertEquals("Error en getComparacionJornada() 12",  -0.5,this.ticket.getComparacionJornada(this.otro), 0.0001);
 	}
 	
 	@Test
 	public void testGetComparacionPuesto() {
-		Assert.assertEquals("Error en getComparacionPuesto() 12", this.ticket.getComparacionPuesto(this.otro), -0.5, 0.0001);
+		Assert.assertEquals("Error en getComparacionPuesto() 12",  -0.5,this.ticket.getComparacionPuesto(this.otro), 0.0001);
 	}
 	
 	@Test
 	public void testGetComparacionExperiencia() {
-		Assert.assertEquals("Error en getComparacionExperiencia() 12", this.ticket.getComparacionExperiencia(this.otro), 1.5, 0.0001);
+		Assert.assertEquals("Error en getComparacionExperiencia() 12", 1.5,this.ticket.getComparacionExperiencia(this.otro), 0.0001);
 	}
 	
 	@Test
 	public void testGetComparacionEstudios() {
-		Assert.assertEquals("Error en getComparacionEstudios() 12", this.ticket.getComparacionEstudios(this.otro), 1.5, 0.0001);
+		Assert.assertEquals("Error en getComparacionEstudios() 12",1.5,this.ticket.getComparacionEstudios(this.otro), 0.0001);
+	}
+	
+	@Test
+	public void testGetComparacionTotal() {
+		Assert.assertEquals("Error en getComparacionTotal() 12", 0.5, this.ticket.getComparacionTotal(this.otro), 0.0001);
 	}
 }

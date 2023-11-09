@@ -64,4 +64,9 @@ public class TestTicket21 {
 	public void testGetComparacionEstudios() {
 		Assert.assertEquals("Error en getComparacionEstudios() 21", -0.5, this.ticket.getComparacionEstudios(this.otro), 0.0001);
 	}
+	
+	@Test
+	public void testGetComparacionTotal() {
+		Assert.assertEquals("Error en getComparacionTotal() 21", -2, this.ticket.getComparacionTotal(this.otro), 0.0001);
+	}
 }
