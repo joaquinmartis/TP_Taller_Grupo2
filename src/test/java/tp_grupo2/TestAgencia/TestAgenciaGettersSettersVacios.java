@@ -56,9 +56,15 @@ public class TestAgenciaGettersSettersVacios {
 	}
 	
 	@Test
-	public void testGetEstado() {
+	public void testGetEstadoTrue() {
 		this.agencia.setEstadoContratacion(true);
 		Assert.assertEquals("Error en getEstado()", util.Mensajes.AGENCIA_EN_CONTRATACION.getValor(), this.agencia.getEstado());
+	}
+	
+	@Test
+	public void testGetEstadoFalse() {
+		this.agencia.setEstadoContratacion(false);
+		Assert.assertEquals("Error en getEstado()", util.Mensajes.AGENCIA_EN_BUSQUEDA.getValor(), this.agencia.getEstado());
 	}
 	
 	@Test
@@ -69,7 +75,7 @@ public class TestAgenciaGettersSettersVacios {
 	@Test
 	public void testSetCoincidencias() {
 		this.agencia.setCoincidencias(this.coincidencias);
-		Assert.assertEquals("Error en setContrataciones", this.coincidencias, this.agencia.getContrataciones());
+		Assert.assertEquals("Error en setContrataciones", this.coincidencias, this.agencia.getCoincidencias());
 	}
 	
 	@Test
@@ -97,9 +103,15 @@ public class TestAgenciaGettersSettersVacios {
 	}
 	
 	@Test
-	public void testSetEstadoContratacion() {
+	public void testSetEstadoContratacionTrue() {
 		this.agencia.setEstadoContratacion(true);
 		Assert.assertEquals("Error en testSetEstadoContratacion", true, this.agencia.isEstadoContratacion());
+	}
+	
+	@Test
+	public void testSetEstadoContratacionFalse() {
+		this.agencia.setEstadoContratacion(false);
+		Assert.assertEquals("Error en testSetEstadoContratacion", false, this.agencia.isEstadoContratacion());
 	}
 	
 	@Test
@@ -160,6 +172,12 @@ public class TestAgenciaGettersSettersVacios {
 	public void testSetPersistencia() {
 		this.agencia.setPersistencia(this.persistencia);
 		Assert.assertEquals("Error en setPersistencia()", this.persistencia, this.agencia.getPersistencia());
+	}
+	
+	@Test
+	public void testSetPersistenciaNull() {
+		this.agencia.setPersistencia(null);
+		Assert.assertEquals("Error en setPersistencia()", null, this.agencia.getPersistencia());
 	}
 	
 	@Test

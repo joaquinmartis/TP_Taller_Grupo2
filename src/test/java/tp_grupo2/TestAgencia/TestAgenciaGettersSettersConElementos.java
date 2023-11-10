@@ -60,7 +60,7 @@ public class TestAgenciaGettersSettersConElementos {
 		this.empleadores.put("+54 9 223 666-1234", empleador);
 		this.contratacion = new Contratacion(empleador, empleado);
 		this.contrataciones.add(contratacion);
-		this.comisionesUsuarios.put(empleado, 0.01);	
+		this.comisionesUsuarios.put(this.empleado, 0.01);	
 		this.coincidencias.add(contratacion);
 	}
 
@@ -68,31 +68,33 @@ public class TestAgenciaGettersSettersConElementos {
 	public void tearDown() throws Exception {
 	}
 	
-	/*
+	@Test
+	public void testSetContrataciones() {
+		this.agencia.setContrataciones(this.contrataciones);
+		Assert.assertEquals("Error en testSetContrataciones", this.contrataciones, this.agencia.getContrataciones());
+	}
 	
-	Estos dos metodos funcionan mal porque probablemente no entiendo como funciona getContratacionEmpleador / EmpleadoPretenso
-	Creo que habria que generar los tickets y gatillas la ronda para que cree las coincidencias y las encuentre con estos métodos
-
+	@Test
+	public void testSetCoincidencias() {
+		this.agencia.setCoincidencias(this.coincidencias);
+		Assert.assertEquals("Error en setContrataciones", this.coincidencias, this.agencia.getCoincidencias());
+	}
+	
 	@Test
 	public void testGetContratacionEmpleador() {
-	
-		
+		this.agencia.setContrataciones(this.contrataciones);
+		this.agencia.setCoincidencias(this.coincidencias); //como no se especifica en que lista se busca se setean las 2 con la contratacion
 		EmpleadoPretenso empleado = (EmpleadoPretenso) this.agencia.getContratacionEmpleador(this.empleador);
 		Assert.assertEquals("Error en getContratacionEmpleador()", this.empleado, empleado);
 	}
 	
 	@Test
 	public void testGetContratacionEmpleadoPretenso() {
+		this.agencia.setContrataciones(this.contrataciones);
+		this.agencia.setCoincidencias(this.coincidencias); //como no se especifica en que lista se busca se setean las 2 con la contratacion
 		Empleador empleador = (Empleador) this.agencia.getContratacionEmpleadoPretenso(this.empleado);
 		Assert.assertEquals("Error en getContratacionEmpleadoPretenso()", this.empleador, empleador);
 		
-	}
-	*/
-	
-	@Test
-	public void testSetCoincidencias() {
-		this.agencia.setCoincidencias(this.coincidencias);
-		Assert.assertEquals("Error en setContrataciones", this.coincidencias, this.agencia.getContrataciones());
 	}
 	
 	@Test
@@ -102,9 +104,9 @@ public class TestAgenciaGettersSettersConElementos {
 	}
 	
 	@Test
-	public void testSetContrataciones() {
-		this.agencia.setContrataciones(this.contrataciones);
-		Assert.assertEquals("Error en testSetContrataciones", this.contrataciones, this.agencia.getContrataciones());
+	public void testGetComisionUsuario() {
+		this.agencia.setComisionesUsuarios(this.comisionesUsuarios);
+		Assert.assertEquals("Error en testGetComisionUsuario", 0.01,this.agencia.getComisionUsuario(this.empleado));
 	}
 	
 	@Test
