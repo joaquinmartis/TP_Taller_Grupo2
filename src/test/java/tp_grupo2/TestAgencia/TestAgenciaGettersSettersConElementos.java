@@ -20,7 +20,6 @@ import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
-import persistencia.IPersistencia;
 import persistencia.PersistenciaXML;
 
 public class TestAgenciaGettersSettersConElementos {
@@ -30,7 +29,6 @@ public class TestAgenciaGettersSettersConElementos {
 	HashMap<String, Empleador> empleadores;
 	HashMap<Cliente, Double> comisionesUsuarios;
 	ArrayList<Contratacion> coincidencias;
-	IPersistencia persistencia;
 	Empleador empleador;
 	EmpleadoPretenso empleado;
 	Contratacion contratacion;
@@ -54,7 +52,6 @@ public class TestAgenciaGettersSettersConElementos {
 		this.contrataciones = new ArrayList<Contratacion>();
 		this.comisionesUsuarios = new HashMap<Cliente,Double>();
 		this.coincidencias = new ArrayList<Contratacion>();
-		this.persistencia = new PersistenciaXML();
 		
 		this.empleados.put("+54 9 223 594-3482", empleado);
 		this.empleadores.put("+54 9 223 666-1234", empleador);
@@ -71,7 +68,7 @@ public class TestAgenciaGettersSettersConElementos {
 	/*
 	
 	Estos dos metodos funcionan mal porque probablemente no entiendo como funciona getContratacionEmpleador / EmpleadoPretenso
-	Creo que habria que generar los tickets y gatillas la ronda para que cree las coincidencias y las encuentre con estos métodos
+	Creo que habria que generar los tickets y gatillar la ronda para que cree las coincidencias y las encuentre con estos métodos
 
 	@Test
 	public void testGetContratacionEmpleador() {

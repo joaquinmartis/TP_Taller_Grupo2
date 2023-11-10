@@ -20,8 +20,6 @@ import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
-import persistencia.IPersistencia;
-import persistencia.PersistenciaXML;
 
 public class TestAgenciaGettersSettersVacios {
 	Agencia agencia;
@@ -30,7 +28,6 @@ public class TestAgenciaGettersSettersVacios {
 	HashMap<String,Empleador> empleadores;
 	HashMap<Cliente,Double> comisionesUsuarios;
 	ArrayList<Contratacion> coincidencias;
-	IPersistencia persistencia;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -48,7 +45,6 @@ public class TestAgenciaGettersSettersVacios {
 		this.contrataciones = new ArrayList<Contratacion>();
 		this.comisionesUsuarios = new HashMap<Cliente,Double>();
 		this.coincidencias = new ArrayList<Contratacion>();
-		this.persistencia = new PersistenciaXML();
 	}
 
 	@After
@@ -157,12 +153,6 @@ public class TestAgenciaGettersSettersVacios {
 	}
 	
 	@Test
-	public void testSetPersistencia() {
-		this.agencia.setPersistencia(this.persistencia);
-		Assert.assertEquals("Error en setPersistencia()", this.persistencia, this.agencia.getPersistencia());
-	}
-	
-	@Test
 	public void testGetIterartorEmpleadores() {
 		Iterator<Empleador> empleadores = this.agencia.getIterartorEmpleadores();
 		Assert.assertFalse("Error en getIterartorEmpleadores()", empleadores.hasNext());
@@ -173,5 +163,4 @@ public class TestAgenciaGettersSettersVacios {
 		Iterator<EmpleadoPretenso> empleados = this.agencia.getIteratorEmpleadosPretensos();
 		Assert.assertFalse("Error en getIteratorEmpleadosPretensos()", empleados.hasNext());
 	}
-	
 }
