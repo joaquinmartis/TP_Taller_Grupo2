@@ -20,6 +20,7 @@ import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
+import tp_grupo2.TestPersistencia.PersistenciaXML;
 
 public class TestAgenciaGettersSettersVacios {
 	Agencia agencia;
@@ -177,8 +178,9 @@ public class TestAgenciaGettersSettersVacios {
 	}
 
 	public void testSetPersistencia() {
-		this.agencia.setPersistencia(this.persistencia);
-		Assert.assertEquals("Error en setPersistencia", this.persistencia, this.agencia.getPersistencia());
+		IPersistencia persistencia = new PersistenciaXML();
+		this.agencia.setPersistencia(persistencia);
+		Assert.assertEquals("Error en setPersistencia", persistencia, this.agencia.getPersistencia());
 	}
 	
 	@Test
