@@ -45,6 +45,12 @@ public class TestAgenciaGettersSettersVacios {
 		this.contrataciones = new ArrayList<Contratacion>();
 		this.comisionesUsuarios = new HashMap<Cliente,Double>();
 		this.coincidencias = new ArrayList<Contratacion>();
+		
+		this.agencia.setEmpleados(empleados);
+		this.agencia.setEmpleadores(empleadores);
+		this.agencia.setContrataciones(contrataciones);
+		this.agencia.setComisionesUsuarios(comisionesUsuarios);
+		this.agencia.setCoincidencias(coincidencias);
 	}
 
 	@After
@@ -65,7 +71,7 @@ public class TestAgenciaGettersSettersVacios {
 	
 	@Test
 	public void testGetInstance() {
-		Assert.assertEquals("Error en Agencia.getInstance()", this.agencia, agencia.getInstance());
+		Assert.assertEquals("Error en Agencia.getInstance()", this.agencia, Agencia.getInstance());
 	}
 	
 	@Test
@@ -162,12 +168,6 @@ public class TestAgenciaGettersSettersVacios {
 			fail("No deberia lanzar LimiteSuperiorRemuneracionInvalidaException");
 		} catch (LimiteInferiorRemuneracionInvalidaException e) {
 		}
-	}
-	
-	@Test
-	public void testSetPersistencia() {
-		this.agencia.setPersistencia(this.persistencia);
-		Assert.assertEquals("Error en setPersistencia()", this.persistencia, this.agencia.getPersistencia());
 	}
 	
 	@Test

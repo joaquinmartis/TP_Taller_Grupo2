@@ -44,6 +44,8 @@ public class TestAgenciaListasConElementosEstadoContratacionFalse {
 		this.empleado = (EmpleadoPretenso) this.agencia.registroEmpleado("PepePretenso", "contrasenia", "Pepe", "Gomez", "2234434312", 21);
 		this.empleador = (Empleador) this.agencia.registroEmpleador("PepeEmpleador", "contrasenia", "Pepe", "Gomez", util.Constantes.FISICA, util.Constantes.SALUD);
 		this.agencia.setEstadoContratacion(false);
+		this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.empleado);
+		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_MEDIA, util.Constantes.PRIMARIOS, this.empleador);
 	}
 	
 	@After
@@ -51,23 +53,64 @@ public class TestAgenciaListasConElementosEstadoContratacionFalse {
 	}
 	
 	@Test
-	public void testCrearTicketEmpleado() {
-		try {
-			this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.empleado);
-			Assert.assertEquals("Error en crearTicketEmpleado",999 , this.empleado.getTicket().getRemuneracion());
-		} catch (ImposibleModificarTicketsException e) {
-			fail("No deberia lanzar excepcion");
-		}
+	public void testCrearTicketEmpleadoEstudios() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getEstudios", util.Constantes.PRIMARIOS, this.empleado.getTicket().getEstudios());
 	}
 	
 	@Test
-	public void testCrearTicketEmpleador() {
-		try {
-			this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_MEDIA, util.Constantes.PRIMARIOS, this.empleador);
-			Assert.assertEquals("Error en crearTicketEmpleador",999 , this.empleador.getTicket().getRemuneracion());
-		} catch (ImposibleModificarTicketsException e) {
-			fail("No deberia lanzar excepcion");
-		}
+	public void testCrearTicketEmpleadoExperiencia() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getExperiencia", util.Constantes.EXP_NADA, this.empleado.getTicket().getExperiencia());
 	}
 	
+	@Test
+	public void testCrearTicketEmpleadoJornada() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getJornada", util.Constantes.JORNADA_MEDIA, this.empleado.getTicket().getJornada());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadoLocacion() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getLocacion", util.Constantes.HOME_OFFICE, this.empleado.getTicket().getLocacion());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadoPuesto() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getPuesto", util.Constantes.JUNIOR, this.empleado.getTicket().getPuesto());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadoRemuneracion() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getRemuneracion", 999, this.empleado.getTicket().getRemuneracion());
+	}
+
+	// Empleador
+	
+	@Test
+	public void testCrearTicketEmpleadorEstudios() {
+		Assert.assertEquals("Error en crearTicketEmpleador.getEstudios", util.Constantes.PRIMARIOS, this.empleador.getTicket().getEstudios());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadorExperiencia() {
+		Assert.assertEquals("Error en crearTicketEmpleador.getExperiencia", util.Constantes.EXP_MEDIA, this.empleador.getTicket().getExperiencia());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadorJornada() {
+		Assert.assertEquals("Error en crearTicketEmpleador.getJornada", util.Constantes.JORNADA_MEDIA, this.empleador.getTicket().getJornada());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadorLocacion() {
+		Assert.assertEquals("Error en crearTicketEmpleador.getLocacion", util.Constantes.HOME_OFFICE, this.empleador.getTicket().getLocacion());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadorPuesto() {
+		Assert.assertEquals("Error en crearTicketEmpleador.getPuesto", util.Constantes.JUNIOR, this.empleador.getTicket().getPuesto());
+	}
+	
+	@Test
+	public void testCrearTicketEmpleadorRemuneracion() {
+		Assert.assertEquals("Error en crearTicketEmpleado.getRemuneracion", 999, this.empleador.getTicket().getRemuneracion());
+	}	
 }

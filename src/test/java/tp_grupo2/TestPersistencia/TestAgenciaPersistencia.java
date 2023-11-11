@@ -58,6 +58,16 @@ public class TestAgenciaPersistencia {
 			fail("No debería lanzar excepcion en testCargarAgenciaPersistenciaNull()");
 		}
 	}
+
+	@Test
+	public void testCargarAgenciaCorrecto() {
+		this.agencia.setPersistencia(this.persistencia);
+		try {
+			Assert.assertTrue("Error en cargarAgenciaPersistencia", this.agencia.cargarAgencia("AgenciaDespersistir.xml"));
+		} catch (Exception e) {
+			fail("No debería lanzar excepcion en testCargarAgenciaCorrecto()");
+		}
+	}
 	
 	@Test
 	public void testGuardarAgenciaPersistenciaNull() {

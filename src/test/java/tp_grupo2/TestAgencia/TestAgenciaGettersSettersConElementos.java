@@ -103,7 +103,7 @@ public class TestAgenciaGettersSettersConElementos {
 	@Test
 	public void testGetComisionUsuario() {
 		this.agencia.setComisionesUsuarios(this.comisionesUsuarios);
-		Assert.assertEquals("Error en testGetComisionUsuario", 0.01,this.agencia.getComisionUsuario(this.empleado));
+		Assert.assertEquals("Error en testGetComisionUsuario", 0.01, this.agencia.getComisionUsuario(this.empleado), 0.0001);
 	}
 	
 	@Test
@@ -119,14 +119,14 @@ public class TestAgenciaGettersSettersConElementos {
 	}
 	
 	@Test
-	public void testGetIterartorEmpleadores() {
+	public void testGetIteratorEmpleadores() {
 		this.agencia.setEmpleadores(empleadores);;
 		Iterator<Empleador> empleadores = this.agencia.getIterartorEmpleadores();
 		Assert.assertTrue("Error en getIterartorEmpleadores()", empleadores.hasNext());
 	}
 	
 	@Test
-	public void testGetIterartorEmpleadosPretensos() {
+	public void testGetIteratorEmpleadosPretensos() {
 		this.agencia.setEmpleados(empleados);
 		Iterator<EmpleadoPretenso> empleados = this.agencia.getIteratorEmpleadosPretensos();
 		Assert.assertTrue("Error en getIteratorEmpleadosPretensos()", empleados.hasNext());
