@@ -21,7 +21,7 @@ import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
 
-public class TestAgenciaRegistroListasVacias {
+public class TestAgenciaRegistros {
 	Agencia agencia;
 	
 	@BeforeClass
@@ -35,24 +35,16 @@ public class TestAgenciaRegistroListasVacias {
 	@Before
 	public void setUp() throws Exception {
 		this.agencia = Agencia.getInstance();
-		this.agencia.setEmpleadores(new HashMap<String, Empleador>());
-		this.agencia.setEmpleados(new HashMap<String,EmpleadoPretenso>());
+		HashMap<String, Empleador> empleadores= new HashMap<String, Empleador>();
+		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
+		empleadores.put("Tomasito",new Empleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD));
+		empleados.put("Palo",new EmpleadoPretenso("Palo","987654321","Paloma","223291242","Diaz",21));
+		this.agencia.setEmpleadores(empleadores);
+		this.agencia.setEmpleados(empleados);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-	}
-	
-	@Test
-	public void testLoginListasVacias() {
-		try {
-			this.agencia.login("usuario", "contrasena");
-			fail("Deberia lanzar NombreUsuarioException");
-		} catch (ContraException e) {
-			fail("Deberia lanzar NombreUsuarioException");
-		} catch (NombreUsuarioException e) {
-			
-		}
 	}
 
 	@Test
@@ -65,6 +57,7 @@ public class TestAgenciaRegistroListasVacias {
 		String rubro = util.Constantes.SALUD;
 		try {
 			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			Assert.assertEquals("Error en testRegistroEmpleador()", 2, this.agencia.getEmpleadores().size());
 		} catch (NewRegisterException e) {
 			fail("No deberia lanzar la excepción");
 		} catch (ImposibleCrearEmpleadorException e){
@@ -207,6 +200,25 @@ public class TestAgenciaRegistroListasVacias {
 		} catch (ImposibleCrearEmpleadorException e){
 		}
 	}
+	
+	@Test
+	public void testRegistroEmpleadorYaRegistrado() {
+		String nombreUsuario = "Tomasito";
+		String pass = "contrasenia";
+		String nombreReal = "Pepe Gomes";
+ 		String telefono = "2234434312";
+		String tipoPersona = util.Constantes.FISICA;
+		String rubro = util.Constantes.SALUD;
+		try {
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			this.agencia.registroEmpleador(nombreUsuario, pass, nombreReal, telefono, tipoPersona, rubro);
+			fail("No deberia crear el Empleador repetido");
+		} catch (NewRegisterException e) {
+			
+		} catch (ImposibleCrearEmpleadorException e){
+			fail("No hay parametros null o no considerados en la clase constantes");
+		}
+	}
 
 	@Test
 	public void testRegistroEmpleadoCorrecto(){
@@ -219,6 +231,7 @@ public class TestAgenciaRegistroListasVacias {
 		
 		try {
 			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			Assert.assertEquals("Error en testRegistroEmpleado()", 2, this.agencia.getEmpleados().size());
 		} catch (NewRegisterException e) {
 			fail("Ya existe un empleador con ese nombre de usuario");
 		} catch (ImposibleCrearEmpleadoException e){
@@ -313,6 +326,25 @@ public class TestAgenciaRegistroListasVacias {
 		} catch (NewRegisterException e) {
 			fail("Ya existe un empleador con ese nombre de usuario");
 		} catch (ImposibleCrearEmpleadoException e){
+		}
+	}
+	
+	@Test
+	public void testRegistroEmpleadoYaRegistrado(){
+		String nombreUsuario= "Palo"; //nombre de usuario de la cuenta ya caragada en la lista en setup
+		String pass="contrasenia";
+		String nombreReal="Pepe";
+		String apellido="gomes";
+		String telefono="2234434312";
+		int edad=21;
+		
+		try {
+			this.agencia.registroEmpleado(nombreUsuario,pass,nombreReal,apellido,telefono,edad);
+			fail("No creo la cuenta, pero deberia haberlo hecho");
+		} catch (NewRegisterException e) {
+			
+		} catch (ImposibleCrearEmpleadoException e){
+			fail("No hay parametros null");
 		}
 	}
 }

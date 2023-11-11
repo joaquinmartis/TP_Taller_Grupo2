@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -53,6 +54,7 @@ public class TestAgenciaListasConElementosEstadoContratacionFalse {
 	public void testCrearTicketEmpleado() {
 		try {
 			this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.empleado);
+			Assert.assertEquals("Error en crearTicketEmpleado",999 , this.empleado.getTicket().getRemuneracion());
 		} catch (ImposibleModificarTicketsException e) {
 			fail("No deberia lanzar excepcion");
 		}
@@ -62,8 +64,10 @@ public class TestAgenciaListasConElementosEstadoContratacionFalse {
 	public void testCrearTicketEmpleador() {
 		try {
 			this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 999, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_MEDIA, util.Constantes.PRIMARIOS, this.empleador);
+			Assert.assertEquals("Error en crearTicketEmpleador",999 , this.empleador.getTicket().getRemuneracion());
 		} catch (ImposibleModificarTicketsException e) {
 			fail("No deberia lanzar excepcion");
 		}
 	}
+	
 }
