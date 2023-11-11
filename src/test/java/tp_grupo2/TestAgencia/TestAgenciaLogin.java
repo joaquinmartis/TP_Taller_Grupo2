@@ -57,6 +57,16 @@ public class TestAgenciaLogin{
 	}
 	
 	@Test
+	public void testLoginAdmin() {
+		try {
+			this.agencia.login("admin", "admin");
+			Assert.assertEquals("No se loguea correctamente el administrador",2, this.agencia.getTipoUsuario());
+		} catch (ContraException | NombreUsuarioException e) {
+			fail("Deberia logear correctamente sin tirar errores");
+		}
+	}
+	
+	@Test
 	public void testLoginContraException() {
 		try {
 			this.agencia.login(this.userName, "contraException");
