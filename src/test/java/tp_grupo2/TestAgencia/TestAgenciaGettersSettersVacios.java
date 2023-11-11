@@ -175,6 +175,11 @@ public class TestAgenciaGettersSettersVacios {
 		this.agencia.setPersistencia(null);
 		Assert.assertEquals("Error en setPersistencia()", null, this.agencia.getPersistencia());
 	}
+
+	public void testSetPersistencia() {
+		this.agencia.setPersistencia(this.persistencia);
+		Assert.assertEquals("Error en setPersistencia", this.persistencia, this.agencia.getPersistencia());
+	}
 	
 	@Test
 	public void testGetIterartorEmpleadores() {

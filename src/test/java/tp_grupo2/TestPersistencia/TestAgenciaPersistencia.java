@@ -44,11 +44,26 @@ public class TestAgenciaPersistencia {
 	public void tearDown() throws Exception {
 	}
 	
-	public void testSetPersistencia() {
-		this.agencia.setPersistencia(this.persistencia);
-		Assert.assertEquals("Error en setPersistencia", this.persistencia, this.agencia.getPersistencia());
+	@Test
+	public void testGuardarAgenciaPersistenciaNull() {
+		this.agencia.setPersistencia(null);
+		try {
+			Assert.assertFalse("Error en guardarAgenciaPersistencia", this.agencia.guardarAgencia("Nombre"));
+		} catch (Exception e) {
+			fail("No debería lanzar excepcion en testGuardarAgenciaPersistenciaNull()");			
+		}
 	}
-		
+	
+	@Test
+	public void testGuardarAgenciaPersistenciaCorrecto() {
+		this.agencia.setPersistencia(this.persistencia);
+		try {
+			Assert.assertTrue("Error en guardarAgenciaPersistencia", this.agencia.guardarAgencia("AgenciaPersistencia.xml"));
+		} catch (Exception e) {
+			fail("No debería lanzar excepcion en testGuardarAgenciaPersistenciaNull()");			
+		}
+	}
+	
 	@Test
 	public void testCargarAgenciaPersistenciaNull() {
 		this.agencia.setPersistencia(null);
@@ -63,19 +78,9 @@ public class TestAgenciaPersistencia {
 	public void testCargarAgenciaCorrecto() {
 		this.agencia.setPersistencia(this.persistencia);
 		try {
-			Assert.assertTrue("Error en cargarAgenciaPersistencia", this.agencia.cargarAgencia("AgenciaDespersistir.xml"));
+			Assert.assertTrue("Error en cargarAgenciaPersistencia", this.agencia.cargarAgencia("AgenciaPersistencia.xml"));
 		} catch (Exception e) {
 			fail("No debería lanzar excepcion en testCargarAgenciaCorrecto()");
-		}
-	}
-	
-	@Test
-	public void testGuardarAgenciaPersistenciaNull() {
-		this.agencia.setPersistencia(null);
-		try {
-			Assert.assertFalse("Error en guardarAgenciaPersistencia", this.agencia.guardarAgencia("Nombre"));
-		} catch (Exception e) {
-			fail("No debería lanzar excepcion en testGuardarAgenciaPersistenciaNull()");			
 		}
 	}
 }
