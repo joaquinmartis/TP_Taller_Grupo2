@@ -20,7 +20,8 @@ import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
-import tp_grupo2.TestPersistencia.PersistenciaXML;
+import persistencia.IPersistencia;
+import persistencia.PersistenciaXML;
 
 public class TestAgenciaGettersSettersVacios {
 	Agencia agencia;

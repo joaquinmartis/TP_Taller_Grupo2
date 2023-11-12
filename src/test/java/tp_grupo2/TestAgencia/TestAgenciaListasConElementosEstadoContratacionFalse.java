@@ -1,7 +1,5 @@
 package tp_grupo2.TestAgencia;
 
-import static org.junit.Assert.fail;
-
 import java.util.HashMap;
 
 import org.junit.After;
@@ -11,13 +9,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.ImposibleCrearEmpleadoException;
-import excepciones.ImposibleCrearEmpleadorException;
-import excepciones.ImposibleModificarTicketsException;
-import excepciones.NewRegisterException;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
-import modeloDatos.Ticket;
 import modeloNegocio.Agencia;
 
 public class TestAgenciaListasConElementosEstadoContratacionFalse {

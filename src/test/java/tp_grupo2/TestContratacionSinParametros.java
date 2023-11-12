@@ -1,7 +1,5 @@
 package tp_grupo2;
 
-import static org.junit.Assert.fail;
-
 import java.util.GregorianCalendar;
 
 import org.junit.After;

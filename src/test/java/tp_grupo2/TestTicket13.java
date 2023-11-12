@@ -1,14 +1,12 @@
 package tp_grupo2;
 
-import static org.junit.Assert.fail;
-
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import org.junit.Assert;
 import modeloDatos.Ticket;
 import modeloNegocio.Agencia;
 

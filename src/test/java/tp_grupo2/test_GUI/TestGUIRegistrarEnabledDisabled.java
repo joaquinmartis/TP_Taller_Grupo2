@@ -1,7 +1,5 @@
 package tp_grupo2.test_GUI;
 
-import static org.junit.Assert.*;
-
 import java.awt.AWTException;
 import java.awt.Component;
 import java.awt.Robot;

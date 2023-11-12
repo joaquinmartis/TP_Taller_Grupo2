@@ -1,21 +1,15 @@
 package tp_grupo2;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
-import java.util.GregorianCalendar;
-
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import org.junit.Assert;
 import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
-import modeloDatos.Ticket;
 
 public class TestContratacionConParametros {
 	private Contratacion contratacion;

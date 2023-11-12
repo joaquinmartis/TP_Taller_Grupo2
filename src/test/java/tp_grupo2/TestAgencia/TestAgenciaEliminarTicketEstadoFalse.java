@@ -4,20 +4,15 @@ import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.ImposibleCrearEmpleadoException;
-import excepciones.ImposibleCrearEmpleadorException;
 import excepciones.ImposibleModificarTicketsException;
-import excepciones.NewRegisterException;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
-import modeloDatos.Ticket;
 import modeloNegocio.Agencia;
 
 public class TestAgenciaEliminarTicketEstadoFalse {
@@ -34,7 +29,7 @@ public class TestAgenciaEliminarTicketEstadoFalse {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = agencia.getInstance();
+		this.agencia = Agencia.getInstance();
 		this.agencia.setEmpleadores(new HashMap<String,Empleador>());
 		this.agencia.setEmpleados(new HashMap<String, EmpleadoPretenso>());
 		this.empleado = (EmpleadoPretenso) this.agencia.registroEmpleado("PepePretenso", "contrasenia", "Pepe", "Gomez", "2234434312", 21);
@@ -54,7 +49,7 @@ public class TestAgenciaEliminarTicketEstadoFalse {
 	}
 	
 	@Test
-	public void testEliminarTicket() {
+	public void testEliminarTicketPuntaje() {
 		try {
 			this.agencia.eliminarTicket();
 			Assert.assertEquals("Error al descontar puntaje por eliminar ticket", -1, this.empleado.getPuntaje());

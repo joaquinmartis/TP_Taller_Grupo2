@@ -5,14 +5,11 @@ import java.awt.Component;
 import java.awt.Robot;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JTextField;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import controlador.Controlador;

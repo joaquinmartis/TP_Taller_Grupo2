@@ -11,12 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.ContraException;
 import excepciones.ImposibleCrearEmpleadoException;
 import excepciones.ImposibleCrearEmpleadorException;
 import excepciones.NewRegisterException;
-import excepciones.NombreUsuarioException;
-import modeloDatos.Cliente;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;

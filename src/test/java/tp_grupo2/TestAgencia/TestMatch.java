@@ -1,9 +1,5 @@
 package tp_grupo2.TestAgencia;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.HashMap;
 
 import org.junit.After;
@@ -13,12 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.ContraException;
-import excepciones.ImposibleCrearEmpleadoException;
-import excepciones.ImposibleCrearEmpleadorException;
-import excepciones.NewRegisterException;
-import excepciones.NombreUsuarioException;
-import modeloDatos.Cliente;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
@@ -42,14 +32,16 @@ public class TestMatch {
 		this.agencia = agencia.getInstance();
 		HashMap<String, Empleador> empleadores= new HashMap<String, Empleador>();
 		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
+		this.agencia.setEmpleadores(empleadores);
+		this.agencia.setEmpleados(empleados);
 		this.agencia.setEstadoContratacion(false);
-		this.empleador = this.agencia.registroEmpleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD);
-		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.empleador);
+		this.empleador = (Empleador) this.agencia.registroEmpleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD);
+		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS, this.empleador);
 		
-		this.empleado= this.agencia.registroEmpleado("Palo","987654321","Paloma","223291242","Diaz",21);
-		this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.empleado);
+		this.empleado= (EmpleadoPretenso) this.agencia.registroEmpleado("Palo","987654321","Paloma","223291242","Diaz",21);
+		this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.EXP_MUCHA, util.Constantes.TERCIARIOS, this.empleado);
 		
-		this.agencia.match();
+		this.agencia.match(empleador, empleado);
 	}
 
 	@After
@@ -69,12 +61,12 @@ public class TestMatch {
 
 	@Test
 	public void testContratacionEmpleado() {
-		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.empleador,this.agencia.getContratacionEmpleadoPretenso(this.empleado));
+		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.empleador, this.agencia.getContratacionEmpleadoPretenso(this.empleado));
 	}
 
 	@Test
 	public void testContratacionEmpleador() {
-		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.empleado, this.empleador.getContratacionEmpleador(this.empleador));
+		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.empleado, this.agencia.getContratacionEmpleador(this.empleador));
 	}
 	
 	@Test
