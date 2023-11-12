@@ -34,7 +34,7 @@ public class TestAgenciaRegistros {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		HashMap<String, Empleador> empleadores= new HashMap<String, Empleador>();
 		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
 		empleadores.put("Tomasito",new Empleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD));

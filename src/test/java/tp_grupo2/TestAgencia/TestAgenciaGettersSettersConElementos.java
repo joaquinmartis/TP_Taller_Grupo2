@@ -46,7 +46,7 @@ public class TestAgenciaGettersSettersConElementos {
 		this.empleador = new Empleador("juancito", "qwerty123", "Juan Cito", "+54 9 223 666-1234", util.Constantes.SALUD, util.Constantes.JURIDICA);
 		this.empleado  = new EmpleadoPretenso("PedroRodriguez1", "boca2023", "Pedro Rodriguez", "+54 9 223 594-3482","Rodriguez", 36);
 		
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		this.empleados = new HashMap<String,EmpleadoPretenso>();
 		this.empleadores = new HashMap<String,Empleador>();
 		this.contrataciones = new ArrayList<Contratacion>();

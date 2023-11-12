@@ -23,9 +23,9 @@ import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
 
-public class TestCalculaPremiosYCastigos {
+public class TestGatillarRondaEstadoVerdadero {
 	Agencia agencia;
-	EmpleadoPretenso Empleado1,Empleado2;
+	EmpleadoPretenso Empleado1;
 	Empleador Empleador1,Empleador2;
 	
 	@BeforeClass
@@ -51,37 +51,60 @@ public class TestCalculaPremiosYCastigos {
 		
 		this.Empleador2= this.agencia.registroEmpleador("Pepegamer", "contrasenia", "Pepe Gomes", "2234434312", util.Constantes.FISICA,  util.Constantes.SALUD);
 		this.agencia.crearTicketEmpleador(util.Constantes.PRESENCIAL, 2500, util.Constantes.EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.Empleador2);
-		
-		this.Empleado2=this.agencia.registroEmpleado("Mica","123","Micaela Gonzalez","2230839122",23);
-		this.agencia.crearTicketEmpleado(util.Constantes.PRESENCIAL, 2500, util.Constantes.EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.Empleado2);
-	
-		this.agencia.generaPostulantes();//ordena las listas de postulantes, precondicion de calculaPremiosYAsignaciones
-		this.agencia.calculaPremiosCastigosAsignaciones();
+		this.agencia.generaPostulantes();
+		this.agencia.setEstadoContratacion(true);
+		this.Empleado1.setCandidato(this.Empleador1);
+		this.Empleador1.setCandidato(this.Empleado1);
+		this.agencia.gatillarRonda(); //de paso de estado de V a F
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	@Test
+	public void testActualizaPuntajeEmpleado1() {
+		Assert.assertEquals("No se actualiza el puntaje del empleado correctamente (match)",10, this.Empleado1.getPuntaje());
+	}
 	
 	@Test
-	public void testpuntajeEmpleado1() {
-		Assert.assertEquals("El premio y/o castigo del empleado1 no es correctamente calculado",0,this.Empleado1.getPuntaje());
+	public void testActualizaPuntajeEmpleador1() {
+		Assert.assertEquals("No se actualiza el puntaje del empleador correctamente (match)",50, this.Empleador1.getPuntaje());
+	}
+	
+	@Test
+	public void testActualizaPuntajeEmpleador2() {
+		Assert.assertEquals("No se actualiza el puntaje del empleador correctamente (empleador no seleccionado)",-20, this.Empleador2.getPuntaje());
+	}
+	
+	@Test
+	public void testElimTicketEmpleado1() {
+		Assert.assertEquals("Error: no se elimina el ticket del empleado al haber match",null,this.Empleado1.getTicket());
 	}
 
 	@Test
-	public void testpuntajeEmpleado2() {
-		Assert.assertEquals("El premio y/o castigo del empleado2 no es correctamente calculado",0, this.Empleado2.getPuntaje());
+	public void testElimTicketEmpleador1() {
+		Assert.assertEquals("Error: no se elimina el ticket del empleador al haber match",null,this.Empleador1.getTicket());
+	}
+	
+	@Test
+	public void testElimTicketEmpleador2() {
+		Assert.assertEquals("Error: no se elimina el ticket del empleador al gatillar la ronda en estado Verdadero",null,this.Empleador2.getTicket());
 	}
 
 	@Test
-	public void testpuntajeEmpleador1() {
-		Assert.assertEquals("La lista de postulantes de empleador1 no se genera correctamente",10,this.Empleador1.getPuntaje());
+	public void testContratacionEmpleado() {
+		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.Empleador1,this.agencia.getContratacionEmpleadoPretenso(this.Empleado1));
 	}
 
 	@Test
-	public void testpuntajeEmpleador2() {
-		Assert.assertEquals("La lista de postulantes de empleador1 no se genera correctamente",10, this.Empleador1.getPuntaje());
+	public void testContratacionEmpleador() {
+		Assert.assertEquals("No se crea correctamente la contratacion entre empleado y empleador",this.Empleado1, this.empleador.getContratacionEmpleador(this.Empleador1));
+	}
+	
+	@Test
+	public void testCambioEstadoContratacion() {
+		Assert.assertEquals("Error al cambiar el Estado de la contratacion a verdadero", true, this.agencia.isEstadoContratacion());
 	}
 }
 	

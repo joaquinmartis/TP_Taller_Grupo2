@@ -40,7 +40,7 @@ public class TestAgenciaGettersSettersVacios {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		this.empleados = new HashMap<String,EmpleadoPretenso>();
 		this.empleadores = new HashMap<String,Empleador>();
 		this.contrataciones = new ArrayList<Contratacion>();

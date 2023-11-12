@@ -39,15 +39,15 @@ public class TestMatch {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		HashMap<String, Empleador> empleadores= new HashMap<String, Empleador>();
 		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
+		this.agencia.setEstadoContratacion(false);
+		this.empleador = this.agencia.registroEmpleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD);
+		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.empleador);
 		
-		this.Empleador1 = this.agencia.registroEmpleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD);
-		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.Empleador1);
-		
-		this.Empleado1= this.agencia.registroEmpleado("Palo","987654321","Paloma","223291242","Diaz",21);
-		this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.Empleado1);
+		this.empleado= this.agencia.registroEmpleado("Palo","987654321","Paloma","223291242","Diaz",21);
+		this.agencia.crearTicketEmpleado(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.empleado);
 		
 		this.agencia.match();
 	}
@@ -58,12 +58,12 @@ public class TestMatch {
 
 	
 	@Test
-	public void testpuntajeElimTicketEmpleado() {
+	public void testElimTicketEmpleado() {
 		Assert.assertEquals("Error: no se elimina el ticket del empleado al haber match",null,this.empleado.getTicket());
 	}
 
 	@Test
-	public void testpuntajeElimTicketEmpleador() {
+	public void testElimTicketEmpleador() {
 		Assert.assertEquals("Error: no se elimina el ticket del empleador al haber match",null,this.empleador.getTicket());
 	}
 

@@ -39,10 +39,10 @@ public class TestGenPostulantes {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		HashMap<String, Empleador> empleadores= new HashMap<String, Empleador>();
 		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
-		
+		this.agencia.setEstadoContratacion(false);
 		this.Empleador1 = this.agencia.registroEmpleador("Tomasito","123456789","Tomas Trimboli","2239102319",util.Constantes.FISICA,util.Constantes.SALUD);
 		this.agencia.crearTicketEmpleador(util.Constantes.HOME_OFFICE, 500, util.Constantes.JORNADA_MEDIA, util.Constantes.JUNIOR, util.Constantes.MUCHA, util.Constantes.TERCIARIO, this.Empleador1);
 		
@@ -64,22 +64,22 @@ public class TestGenPostulantes {
 
 	
 	@Test
-	public void testListaEmpleadoNoVacia() {
+	public void testListaEmpleado1NoVacia() {
 		Assert.assertEquals("La lista de postulantes de empleado no se genera correctamente",2,this.Empleado1.getListaDePostulantes.size());
 	}
 
 	@Test
-	public void testListaEmpleado1erElemento() {
+	public void testListaEmpleado1primerElemento() {
 		Assert.assertEquals("El primer elemento de la lista de postulantes de empleado, no coincide con el empleador esperado segun el puntaje del ticket",this.Empleado1, this.Empleado1.getListaDePostulantes().get(0).getCliente());
 	}
 
 	@Test
-	public void testListaEmpleadorNoVacia() {
+	public void testListaEmpleador1NoVacia() {
 		Assert.assertEquals("La lista de postulantes de empleador no se genera correctamente",2,this.Empleador1.getListaDePostulantes.size());
 	}
 
 	@Test
-	public void testListaEmpleador1erElemento() {
+	public void testListaEmpleador1primerElemento() {
 		Assert.assertEquals("El primer elemento de la lista de postulantes de empleador, no coincide con el empleador esperado segun el puntaje del ticket",this.Empleador1, this.Empleador1.getListaDePostulantes().get(0).getCliente());
 	}
 }

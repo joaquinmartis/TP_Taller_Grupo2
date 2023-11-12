@@ -23,7 +23,7 @@ import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
 
-public class TestCalculaPremiosYCastigos {
+public class TestGatillarRondaEstadoFalso {
 	Agencia agencia;
 	EmpleadoPretenso Empleado1,Empleado2;
 	Empleador Empleador1,Empleador2;
@@ -55,14 +55,33 @@ public class TestCalculaPremiosYCastigos {
 		this.Empleado2=this.agencia.registroEmpleado("Mica","123","Micaela Gonzalez","2230839122",23);
 		this.agencia.crearTicketEmpleado(util.Constantes.PRESENCIAL, 2500, util.Constantes.EXTENDIDA, util.Constantes.MANAGMENT, util.Constantes.EXP_NADA, util.Constantes.PRIMARIOS, this.Empleado2);
 	
-		this.agencia.generaPostulantes();//ordena las listas de postulantes, precondicion de calculaPremiosYAsignaciones
-		this.agencia.calculaPremiosCastigosAsignaciones();
+		this.agencia.gatillarRonda(); //de paso de estado de F a V
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	
+	@Test
+	public void testListaEmpleado1NoVacia() {
+		Assert.assertEquals("La lista de postulantes de empleado no se genera correctamente",2,this.Empleado1.getListaDePostulantes.size());
+	}
+
+	@Test
+	public void testListaEmpleado1PrimerElemento() {
+		Assert.assertEquals("El primer elemento de la lista de postulantes de empleado, no coincide con el empleador esperado segun el puntaje del ticket",this.Empleado1, this.Empleado1.getListaDePostulantes().get(0).getCliente());
+	}
+
+	@Test
+	public void testListaEmpleador1NoVacia() {
+		Assert.assertEquals("La lista de postulantes de empleador no se genera correctamente",2,this.Empleador1.getListaDePostulantes.size());
+	}
+
+	@Test
+	public void testListaEmpleador1PrimerElemento() {
+		Assert.assertEquals("El primer elemento de la lista de postulantes de empleador, no coincide con el empleador esperado segun el puntaje del ticket",this.Empleador1, this.Empleador1.getListaDePostulantes().get(0).getCliente());
+	}
 	
 	@Test
 	public void testpuntajeEmpleado1() {
@@ -83,5 +102,11 @@ public class TestCalculaPremiosYCastigos {
 	public void testpuntajeEmpleador2() {
 		Assert.assertEquals("La lista de postulantes de empleador1 no se genera correctamente",10, this.Empleador1.getPuntaje());
 	}
+	
+	@Test
+	public void testCambioEstadoContratacion() {
+		Assert.assertEquals("Error al cambiar el Estado de la contratacion a verdadero", true, this.agencia.isEstadoContratacion());
+	}
+	
 }
 	

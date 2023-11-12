@@ -37,7 +37,7 @@ public class TestAgenciaListasConElementosEstadoContratacionTrue {
 		/* Escenario donde hay un empleado y un empleador
 		 * estadoContratacion = false
 		 *  */
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		this.agencia.setEmpleadores(new HashMap<String,Empleador>());
 		this.agencia.setEmpleados(new HashMap<String, EmpleadoPretenso>());
 		this.empleado = (EmpleadoPretenso) this.agencia.registroEmpleado("PepePretenso", "contrasenia", "Pepe", "Gomez", "2234434312", 21);
