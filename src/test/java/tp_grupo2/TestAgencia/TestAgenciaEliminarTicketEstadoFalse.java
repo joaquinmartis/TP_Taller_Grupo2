@@ -34,7 +34,7 @@ public class TestAgenciaEliminarTicketEstadoFalse {
 
 	@Before
 	public void setUp() throws Exception {
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		this.agencia.setEmpleadores(new HashMap<String,Empleador>());
 		this.agencia.setEmpleados(new HashMap<String, EmpleadoPretenso>());
 		this.empleado = (EmpleadoPretenso) this.agencia.registroEmpleado("PepePretenso", "contrasenia", "Pepe", "Gomez", "2234434312", 21);
@@ -48,6 +48,16 @@ public class TestAgenciaEliminarTicketEstadoFalse {
 		try {
 			this.agencia.eliminarTicket();
 			Assert.assertEquals("Error al eliminar el ticket", null, this.empleado.getTicket());
+		} catch (ImposibleModificarTicketsException e) {
+			fail("No deberia lanzar excepcion");
+		}
+	}
+	
+	@Test
+	public void testEliminarTicket() {
+		try {
+			this.agencia.eliminarTicket();
+			Assert.assertEquals("Error al descontar puntaje por eliminar ticket", -1, this.empleado.getPuntaje());
 		} catch (ImposibleModificarTicketsException e) {
 			fail("No deberia lanzar excepcion");
 		}

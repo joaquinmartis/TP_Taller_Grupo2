@@ -29,7 +29,7 @@ public class TestAgenciaUsuarioLogeado {
 		String userName = "Pepegamer";
 		String contrasena = "qwertyuiop";
 		
-		this.agencia = Agencia.getInstance();
+		this.agencia = agencia.getInstance();
 		this.agencia.setEmpleadores(new HashMap<String, Empleador>());
 		this.agencia.setEmpleados(new HashMap<String,EmpleadoPretenso>());
 		
