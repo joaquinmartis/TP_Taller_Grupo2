@@ -1,7 +1,6 @@
 package tp_grupo2;
 
-import static org.junit.Assert.*;
-import junit.framework.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,7 +11,6 @@ import org.junit.Test;
 
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Ticket;
-import modeloDatos.Usuario;
 
 public class TestEmpleadoPretensoSinParametros {
 	EmpleadoPretenso empleadoPretenso;

@@ -1,7 +1,5 @@
 package tp_grupo2.TestAgencia;
 
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,14 +11,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.LimiteInferiorRemuneracionInvalidaException;
-import excepciones.LimiteSuperiorRemuneracionInvalidaException;
 import modeloDatos.Cliente;
 import modeloDatos.Contratacion;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
-import persistencia.PersistenciaXML;
 
 public class TestAgenciaGettersSettersConElementos {
 	Agencia agencia;

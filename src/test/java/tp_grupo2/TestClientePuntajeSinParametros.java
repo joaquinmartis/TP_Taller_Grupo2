@@ -1,7 +1,5 @@
 package tp_grupo2;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -10,7 +8,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import modeloDatos.ClientePuntaje;
-import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
 
 public class TestClientePuntajeSinParametros {

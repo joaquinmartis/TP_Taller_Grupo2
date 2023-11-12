@@ -10,13 +10,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import excepciones.ImposibleCrearEmpleadoException;
-import excepciones.ImposibleCrearEmpleadorException;
 import excepciones.ImposibleModificarTicketsException;
-import excepciones.NewRegisterException;
 import modeloDatos.EmpleadoPretenso;
 import modeloDatos.Empleador;
-import modeloDatos.Ticket;
 import modeloNegocio.Agencia;
 
 public class TestAgenciaListasConElementosEstadoContratacionTrue {

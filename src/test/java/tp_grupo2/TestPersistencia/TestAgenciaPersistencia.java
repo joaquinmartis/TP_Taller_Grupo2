@@ -9,9 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import modeloDatos.Contratacion;
-import modeloDatos.EmpleadoPretenso;
-import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
 import persistencia.IPersistencia;
 import persistencia.PersistenciaXML;
@@ -21,8 +18,6 @@ public class TestAgenciaPersistencia {
 	IPersistencia persistencia;
 	
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {

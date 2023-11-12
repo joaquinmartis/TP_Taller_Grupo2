@@ -5,7 +5,6 @@ package tp_grupo2.test_GUI;
 import java.awt.AWTException;
 import java.awt.Robot;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
 
 import org.junit.After;
@@ -45,11 +44,6 @@ public class TestGUI {
 	@After
 	public void tearDown() throws Exception {
 		((JComponent) controlador.getVista()).setVisible(false);
-	}
-
-	@Test
-	public void test() {
-
 	}
 
 }
