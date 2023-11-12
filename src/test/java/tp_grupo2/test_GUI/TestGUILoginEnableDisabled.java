@@ -42,10 +42,28 @@ public class TestGUILoginEnableDisabled {
 	}
 
 	@Test
-	public void testVacio() {
+	public void testVacio1() {
 		JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
 		Assert.assertFalse("El boton de registro deberia estar deshablitado", botonLogin.isEnabled());
 	}
+	
+	@Test
+	public void testVacio2() {
+		JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+		TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("WASD", robot);
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("SALCHICHA", robot);
+        
+        TestUtils.borraJTextField(cajaTexto_Password,robot);
+        TestUtils.borraJTextField(cajaTexto_Nombre_Usuario,robot);
+        
+        Assert.assertFalse("El boton de registro deberia estar deshabilitado", botonLogin.isEnabled());
+	}
+	
 	@Test
 	public void testUnCampoLleno1() {
 		JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
@@ -67,6 +85,41 @@ public class TestGUILoginEnableDisabled {
         
         Assert.assertFalse("El boton de registro deberia estar deshablitado", botonLogin.isEnabled());
 	}
+	
+	@Test
+	public void testUnCampoLleno3() {
+		
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+		TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("WASD", robot);
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("SALCHICHA", robot);
+        
+        TestUtils.borraJTextField(cajaTexto_Password,robot);
+        
+        JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        Assert.assertFalse("El boton de registro deberia estar deshabilitado", botonLogin.isEnabled());
+	}
+	
+	@Test
+	public void testUnCampoLleno4() {
+		
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+		TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("WASD", robot);
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("SALCHICHA", robot);
+        
+        TestUtils.borraJTextField(cajaTexto_Nombre_Usuario,robot);
+        
+        JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        Assert.assertFalse("El boton de registro deberia estar deshabilitado", botonLogin.isEnabled());
+	}
+	
 	
 	@Test
 	public void testCamposLlenos() {

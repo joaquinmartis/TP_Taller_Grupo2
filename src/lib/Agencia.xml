@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="19.0.2" class="java.beans.XMLDecoder">
+ <object class="persistencia.AgenciaDTO" id="AgenciaDTO0">
+  <void property="comisionesUsuarios">
+   <void method="put">
+    <object class="modeloDatos.EmpleadoPretenso" id="EmpleadoPretenso0">
+     <void property="apellido">
+      <string>22354433733</string>
+     </void>
+     <void property="candidato">
+      <object class="modeloDatos.Empleador" id="Empleador0">
+       <void property="candidato">
+        <object idref="EmpleadoPretenso0"/>
+       </void>
+       <void property="password">
+        <string>marcos</string>
+       </void>
+       <void property="puntaje">
+        <int>560</int>
+       </void>
+       <void property="realName">
+        <string>223453453</string>
+       </void>
+       <void property="rubro">
+        <string>FISICA</string>
+       </void>
+       <void property="telefono">
+        <string>Marcosxd</string>
+       </void>
+       <void property="tipoPersona">
+        <string>COMERCIO INTERNACIONAL</string>
+       </void>
+       <void property="usserName">
+        <string>Marcos</string>
+       </void>
+      </object>
+     </void>
+     <void property="edad">
+      <int>21</int>
+     </void>
+     <void property="password">
+      <string>joaquin</string>
+     </void>
+     <void property="puntaje">
+      <int>108</int>
+     </void>
+     <void property="realName">
+      <string>Joaquin</string>
+     </void>
+     <void property="telefono">
+      <string>Martinez</string>
+     </void>
+     <void property="usserName">
+      <string>Joaquin</string>
+     </void>
+    </object>
+    <double>14400.000000000002</double>
+   </void>
+   <void method="put">
+    <object idref="Empleador0"/>
+    <double>20000.0</double>
+   </void>
+  </void>
+  <void property="contrataciones">
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar" id="GregorianCalendar0">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816645473</long>
+        </object>
+       </void>
+       <void id="Boolean0" method="isLenient"/>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816660316</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816661473</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816662375</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816663779</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816663982</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816664198</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816664388</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816664592</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816664818</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="modeloDatos.Contratacion">
+     <void property="empleado">
+      <object idref="EmpleadoPretenso0"/>
+     </void>
+     <void property="empleador">
+      <object idref="Empleador0"/>
+     </void>
+     <void property="fecha">
+      <object class="java.util.GregorianCalendar">
+       <void property="time">
+        <object class="java.util.Date">
+         <long>1699816666554</long>
+        </object>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="empleadores">
+   <void method="put">
+    <string>Marcos</string>
+    <object idref="Empleador0"/>
+   </void>
+  </void>
+  <void property="empleados">
+   <void method="put">
+    <string>aaa</string>
+    <object class="modeloDatos.EmpleadoPretenso">
+     <void property="apellido">
+      <string>1232</string>
+     </void>
+     <void property="edad">
+      <int>12</int>
+     </void>
+     <void property="password">
+      <string>caca</string>
+     </void>
+     <void property="realName">
+      <string>jaaj</string>
+     </void>
+     <void property="telefono">
+      <string>peres</string>
+     </void>
+     <void property="usserName">
+      <string>aaa</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>Empleado</string>
+    <object class="modeloDatos.EmpleadoPretenso">
+     <void property="apellido">
+      <string>22312312</string>
+     </void>
+     <void property="edad">
+      <int>22</int>
+     </void>
+     <void property="password">
+      <string>empleado</string>
+     </void>
+     <void property="realName">
+      <string>Empleado</string>
+     </void>
+     <void property="telefono">
+      <string>Pretenso</string>
+     </void>
+     <void property="usserName">
+      <string>Empleado</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>empleado</string>
+    <object class="modeloDatos.EmpleadoPretenso">
+     <void property="apellido">
+      <string>3826742</string>
+     </void>
+     <void property="edad">
+      <int>22</int>
+     </void>
+     <void property="password">
+      <string>empleado</string>
+     </void>
+     <void property="realName">
+      <string>djd</string>
+     </void>
+     <void property="telefono">
+      <string>aaaa</string>
+     </void>
+     <void property="usserName">
+      <string>empleado</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>Joaquin</string>
+    <object idref="EmpleadoPretenso0"/>
+   </void>
+   <void method="put">
+    <string>aaas</string>
+    <object class="modeloDatos.EmpleadoPretenso">
+     <void property="apellido">
+      <string>1232</string>
+     </void>
+     <void property="edad">
+      <int>12</int>
+     </void>
+     <void property="password">
+      <string>caca</string>
+     </void>
+     <void property="realName">
+      <string>jaaj</string>
+     </void>
+     <void property="telefono">
+      <string>peres</string>
+     </void>
+     <void property="usserName">
+      <string>aaas</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="estadoContratacion">
+   <object idref="Boolean0"/>
+  </void>
+  <void property="limiteSuperior">
+   <int>2000</int>
+  </void>
+ </object>
+</java>
