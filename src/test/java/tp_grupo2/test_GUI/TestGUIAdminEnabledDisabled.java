@@ -80,12 +80,11 @@ public class TestGUIAdminEnabledDisabled {
         TestUtils.clickComponent(cajaTexto_limite_Inferior, robot);
         TestUtils.tipeaTexto("-5467", robot);
         
-
         JButton botonModificar_Valores= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.MODIFICAR_VALORES);
         Assert.assertFalse("El boton deberia estar deshabilitado",botonModificar_Valores.isEnabled());
-        
-        
+            
 	}
+	
 	@Test
 	public void test3() {
 		JTextField cajaTexto_limite_Superior = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTO_SUPERIOR);
@@ -95,10 +94,10 @@ public class TestGUIAdminEnabledDisabled {
         TestUtils.clickComponent(cajaTexto_limite_Inferior, robot);
         TestUtils.tipeaTexto("1200", robot);
         
-
         JButton botonModificar_Valores= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.MODIFICAR_VALORES);
         Assert.assertTrue("El boton deberia estar habilitado",botonModificar_Valores.isEnabled());
 
 	}
+	
 
 }

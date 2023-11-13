@@ -96,5 +96,68 @@ public class TestGUIEmpleadorEnabledDisabled {
 		Assert.assertTrue("El RadioButton deberia estar hablitado", radioButton_Tipo_Puesto.isEnabled());
 		Assert.assertTrue("El RadioButton deberia estar hablitado", radioButton_Locacion.isEnabled());
 	}
+	
+	@Test
+	public void test2() {
+		JTextField cajaTexto_Remuneracion_Pretentidida= (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+		
+		JButton botonNuevo_Ticket = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+		TestUtils.clickComponent(botonNuevo_Ticket, robot);
+		
+		TestUtils.clickComponent(cajaTexto_Remuneracion_Pretentidida, robot);
+		TestUtils.tipeaTexto("12000", robot);
+		
+		JButton botonAceptar= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CONFIRMARNUEVOTICKET);
+		Assert.assertTrue("El boton deberia estar hablitado", botonAceptar.isEnabled());
+	}
+	
+	@Test
+	public void test3() {
+		JTextField cajaTexto_Remuneracion_Pretentidida= (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+		
+		JButton botonNuevo_Ticket = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+		TestUtils.clickComponent(botonNuevo_Ticket, robot);
+		
+		TestUtils.clickComponent(cajaTexto_Remuneracion_Pretentidida, robot);
+		TestUtils.tipeaTexto("0", robot);
+		
+		JButton botonAceptar= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CONFIRMARNUEVOTICKET);
+		Assert.assertFalse("El boton deberia estar deshablitado", botonAceptar.isEnabled());
+	}
+	
+	@Test
+	public void test4() {
+		JTextField cajaTexto_Remuneracion_Pretentidida= (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+		
+		JButton botonNuevo_Ticket = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+		TestUtils.clickComponent(botonNuevo_Ticket, robot);
+		
+		TestUtils.clickComponent(cajaTexto_Remuneracion_Pretentidida, robot);
+		TestUtils.tipeaTexto("-12000", robot);
+		
+		JButton botonAceptar= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CONFIRMARNUEVOTICKET);
+		Assert.assertFalse("El boton deberia estar deshablitado", botonAceptar.isEnabled());
+	}
+	
+	@Test
+	public void test5() { 
+		JButton botonEliminarTicket= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.ELIMINAR_TICKET);
+		Assert.assertFalse("El boton deberia estar deshablitado", botonEliminarTicket.isEnabled());
+		
+		JTextField cajaTexto_Remuneracion_Pretentidida= (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+		
+		JButton botonNuevo_Ticket = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+		TestUtils.clickComponent(botonNuevo_Ticket, robot);
+		
+		TestUtils.clickComponent(cajaTexto_Remuneracion_Pretentidida, robot);
+		TestUtils.tipeaTexto("12000", robot);
+		
+		JButton botonAceptar= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CONFIRMARNUEVOTICKET);
+		TestUtils.clickComponent(botonAceptar, robot);
+		
+		Assert.assertTrue("El boton deberia estar hablitado", botonEliminarTicket.isEnabled());
+	}
+
+	
 
 }
