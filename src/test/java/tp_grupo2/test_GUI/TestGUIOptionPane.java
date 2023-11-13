@@ -45,6 +45,7 @@ public class TestGUIOptionPane {
 	@Before
 	public void setUp() throws Exception {
 		this.controlador = new Controlador();
+		TestUtils.setDelay(20);
 		this.falsoOptionPane= new FalsoOptionPane();
 		this.controlador.setMyOptionPane(falsoOptionPane);
 		this.agencia = agencia.getInstance();
@@ -62,6 +63,8 @@ public class TestGUIOptionPane {
 	@After
 	public void tearDown() throws Exception {
 	}
+	
+	
 
 	@Test
 	public void test1() {
@@ -169,6 +172,38 @@ public class TestGUIOptionPane {
 	
 	@Test
 	public void test5() {
+		JButton botonRegistrar1 = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REGISTRAR);
+		TestUtils.clickComponent(botonRegistrar1, robot);
+		
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_USSER_NAME);
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_PASSWORD);
+		JTextField cajaTexto_RepetirPassword = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_CONFIRM_PASSWORD);
+		JTextField cajaTexto_Nombre_Real = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_REAL_NAME);
+		JTextField cajaTexto_Telefono = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_TELEFONO);
+		JRadioButton radioButton_Empleador = (JRadioButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.EMPLEADOR);
+		JTextField cajaTexto_Apellido = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_APELLIDO);
+		JTextField cajaTexto_edad = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_EDAD);
+		
+		
+		TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("JoaquinEmpleado", robot);
+        TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("joaquin", robot);
+        TestUtils.clickComponent(cajaTexto_RepetirPassword, robot);
+        TestUtils.tipeaTexto("joaquin", robot);
+        TestUtils.clickComponent(cajaTexto_Nombre_Real, robot);
+        TestUtils.tipeaTexto("Joaquuinxd", robot);
+        TestUtils.clickComponent(cajaTexto_Telefono, robot);
+        TestUtils.tipeaTexto("2232422", robot);
+        TestUtils.clickComponent(radioButton_Empleador, robot);
+ 
+		JButton botonRegistrar2 = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.REG_BUTTON_REGISTRAR);
+		TestUtils.clickComponent(botonRegistrar2, robot);
+		
+        assertEquals("El mensaje es incorrecto",falsoOptionPane.getMensaje(),Mensajes.USUARIO_REPETIDO.getValor());
+	}
+	@Test
+	public void test6() {
 		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
 		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
 		
@@ -188,6 +223,93 @@ public class TestGUIOptionPane {
         TestUtils.clickComponent(botonGatillarRonda, robot);
         assertEquals("El mensaje es incorrecto",falsoOptionPane.getMensaje(),Mensajes.AGENCIA_EN_BUSQUEDA.getValor());
 	}
+
+	@Test
+	public void test7() {
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("admin", robot);
+        TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("admin", robot);
+        
+        JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        TestUtils.clickComponent(botonLogin, robot);
+        
+        JButton botonGatillarRonda= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.GATILLAR);
+        TestUtils.clickComponent(botonGatillarRonda, robot);
+        
+        JButton botonCerrarSesion= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CERRARSESION);
+        TestUtils.clickComponent(botonCerrarSesion, robot);
+        
+        cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.borraJTextField(cajaTexto_Nombre_Usuario,robot);
+        TestUtils.tipeaTexto("JoaquinEmpleado", robot);
+        TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.borraJTextField(cajaTexto_Password,robot);
+        TestUtils.tipeaTexto("joaquin", robot);
+        
+        botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        TestUtils.clickComponent(botonLogin, robot);
+        
+        JButton botonNuevoTicket= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+        TestUtils.clickComponent(botonNuevoTicket, robot);
+        
+        JTextField cajaTexto_Remuneracion_Pretendida = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+        TestUtils.clickComponent(cajaTexto_Remuneracion_Pretendida, robot);
+        TestUtils.tipeaTexto("12345", robot);
+        
+        assertEquals("El mensaje es incorrecto",falsoOptionPane.getMensaje(),Mensajes.ERROR_AGENCIA_EN_CONTRATACION.getValor());
+	}
+	
+	@Test
+	public void test8() {
+		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+        TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.tipeaTexto("admin", robot);
+        TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.tipeaTexto("admin", robot);
+        
+        JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        TestUtils.clickComponent(botonLogin, robot);
+        
+        JButton botonGatillarRonda= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.GATILLAR);
+        TestUtils.clickComponent(botonGatillarRonda, robot);
+        
+        JButton botonCerrarSesion= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.CERRARSESION);
+        TestUtils.clickComponent(botonCerrarSesion, robot);
+        
+        cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
+		cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
+		
+		TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
+        TestUtils.borraJTextField(cajaTexto_Nombre_Usuario,robot);
+        TestUtils.tipeaTexto("JoaquinEmpleador", robot);
+        TestUtils.clickComponent(cajaTexto_Password, robot);
+        TestUtils.borraJTextField(cajaTexto_Password,robot);
+        TestUtils.tipeaTexto("joaquinempleador", robot);
+        
+        botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
+        TestUtils.clickComponent(botonLogin, robot);
+        
+        JButton botonNuevoTicket= (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NUEVOTICKET);
+        TestUtils.clickComponent(botonNuevoTicket, robot);
+        
+        JTextField cajaTexto_Remuneracion_Pretendida = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.TEXTFIELD_REMUNERACION);
+        TestUtils.clickComponent(cajaTexto_Remuneracion_Pretendida, robot);
+        TestUtils.tipeaTexto("12345", robot);
+        
+        assertEquals("El mensaje es incorrecto",falsoOptionPane.getMensaje(),Mensajes.ERROR_AGENCIA_EN_CONTRATACION.getValor());
+	}
+	
+	
+	
 	
 
 }

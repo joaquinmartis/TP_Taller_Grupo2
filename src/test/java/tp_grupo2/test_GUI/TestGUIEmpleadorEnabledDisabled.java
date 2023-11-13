@@ -12,10 +12,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import controlador.Controlador;
@@ -24,13 +22,14 @@ import modeloDatos.Empleador;
 import modeloNegocio.Agencia;
 import util.Constantes;
 
-public class TestGUIEmpleadoEnabledDisabled {
+public class TestGUIEmpleadorEnabledDisabled {
 
 	Robot robot;
 	Controlador controlador;
+	FalsoOptionPane falsoOptionPane;
 	Agencia agencia;
-
-	public TestGUIEmpleadoEnabledDisabled()
+	
+	public TestGUIEmpleadorEnabledDisabled()
     {
         try
         {
@@ -40,7 +39,6 @@ public class TestGUIEmpleadoEnabledDisabled {
         }
     }
 	
-
 	@Before
 	public void setUp() throws Exception {
 		controlador = new Controlador();
@@ -51,20 +49,20 @@ public class TestGUIEmpleadoEnabledDisabled {
 		HashMap<String,EmpleadoPretenso> empleados=new HashMap<String,EmpleadoPretenso>();
 		this.agencia.setEmpleadores(empleadores);
 		this.agencia.setEmpleados(empleados);
-		agencia.registroEmpleado("Empleado", "empleado", "Empleado", "Perez" , "2233422711", 22);
+		agencia.registroEmpleador("Empleador", "empleador", "Empleadoxd", "2233422711" ,Constantes.FISICA, Constantes.SALUD);
 		
 		JTextField cajaTexto_Nombre_Usuario = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.NOMBRE_USUARIO);
 		JTextField cajaTexto_Password = (JTextField) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.PASSWORD);
 		
 
 		TestUtils.clickComponent(cajaTexto_Nombre_Usuario, robot);
-        TestUtils.tipeaTexto("Empleado", robot);
+        TestUtils.tipeaTexto("Empleador", robot);
 		TestUtils.clickComponent(cajaTexto_Password, robot);
-        TestUtils.tipeaTexto("empleado", robot);
+        TestUtils.tipeaTexto("empleador", robot);
         
 		JButton botonLogin = (JButton) TestUtils.getComponentForName((Component)controlador.getVista() ,Constantes.LOGIN);
 		TestUtils.clickComponent(botonLogin, robot);
-		
+	
 	}
 
 	@After
